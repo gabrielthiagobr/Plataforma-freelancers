@@ -1,0 +1,4 @@
+Criar modais para preencher informações do curriculo, assim teremos vários modais. Ex: https://savetheplanetetec.github.io/
+
+No JS teremos quer colocar o display: flex ou none...
+
