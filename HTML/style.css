@@ -1,0 +1,42 @@
+body {
+    background: linear-gradient(to right, #052d5e, #6b6565);
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    transition: background-color 0.19s ease-in-out;
+}
+
+h1 {
+    color: #020202;
+}
+
+details {
+    background: rgba(148, 143, 143, 0.904);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    transition: background-color 7.6s ease-in-out;
+}
+
+img {
+    width: 120px;
+    height: auto;
+}
+
+a {
+    color: rgb(34, 142, 146);
+    text-decoration: solid underline;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: red;
+
+}
+p {
+    color: #020202;
+    font-size: 25px;
+    text-align: center;
+}
