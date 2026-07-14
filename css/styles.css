@@ -1,0 +1,728 @@
+/* ==========================================================================
+   VAGA+ — Plataforma de vagas de tecnologia
+   Design tokens
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root{
+  --ink: #0F2438;
+  --ink-soft: #1A2733;
+  --bg: #F3F6F8;
+  --bg-card: #FFFFFF;
+  --amber: #E8A33D;
+  --amber-dark: #C9821F;
+  --teal: #2C7A6B;
+  --teal-soft: #E4F1EE;
+  --line: #D9E1E7;
+  --white: #FFFFFF;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Public Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 8px 24px rgba(15, 36, 56, 0.08);
+
+  /* controlado pela barra de acessibilidade */
+  --scale: 1;
+}
+
+/* modo alto-contraste, ligado via JS na barra de acessibilidade */
+body.contraste-alto{
+  --ink: #000000;
+  --ink-soft: #000000;
+  --bg: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --amber: #B65C00;
+  --amber-dark: #8A4500;
+  --teal: #005A45;
+  --teal-soft: #FFFFFF;
+  --line: #000000;
+}
+body.contraste-alto .cabecalho,
+body.contraste-alto .rodape{
+  background: #000000;
+}
+body.contraste-alto *{
+  text-shadow: none;
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ font-size: calc(100% * var(--scale)); scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink-soft);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4{
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 0 0 0.5em;
+  line-height: 1.15;
+}
+
+p{ margin: 0 0 1em; }
+
+a{ color: inherit; }
+
+.container{
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+img{ max-width: 100%; display: block; }
+
+button{ font-family: inherit; cursor: pointer; }
+
+/* --------------------------------------------------------------------------
+   Barra de acessibilidade (elemento-assinatura do projeto)
+   -------------------------------------------------------------------------- */
+.barra-acessibilidade{
+  background: var(--ink);
+  color: var(--white);
+  font-size: 0.82rem;
+}
+.barra-acessibilidade .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  flex-wrap: wrap;
+}
+.barra-acessibilidade__texto{
+  opacity: 0.85;
+}
+.barra-acessibilidade__controles{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.barra-acessibilidade__grupo{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+  padding: 3px;
+}
+.btn-fonte{
+  background: transparent;
+  border: none;
+  color: var(--white);
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+.btn-fonte:hover, .btn-fonte:focus-visible{ background: rgba(255,255,255,0.2); }
+.btn-contraste{
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+.btn-contraste:hover, .btn-contraste:focus-visible{ background: rgba(255,255,255,0.2); }
+.btn-contraste[aria-pressed="true"]{ background: var(--amber); border-color: var(--amber); color: var(--ink); }
+
+/* --------------------------------------------------------------------------
+   Cabeçalho / navegação
+   -------------------------------------------------------------------------- */
+.cabecalho{
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.cabecalho .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.logo{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+.logo span{ color: var(--amber-dark); }
+
+.nav-principal{
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.nav-principal a{
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.nav-principal a:hover, .nav-principal a:focus-visible{
+  border-color: var(--amber);
+}
+.nav-principal a[aria-current="page"]{
+  color: var(--amber-dark);
+  border-color: var(--amber-dark);
+}
+
+.acoes-cabecalho{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.botao{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  padding: 11px 22px;
+  border: 2px solid transparent;
+  text-decoration: none;
+  transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.botao:active{ transform: translateY(1px); }
+.botao--primario{
+  background: var(--amber);
+  color: var(--ink);
+}
+.botao--primario:hover, .botao--primario:focus-visible{ background: var(--amber-dark); color: var(--white); }
+.botao--fantasma{
+  background: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.botao--fantasma:hover, .botao--fantasma:focus-visible{ background: var(--ink); color: var(--white); }
+.botao--teal{
+  background: var(--teal);
+  color: var(--white);
+}
+.botao--teal:hover, .botao--teal:focus-visible{ background: #205a4f; }
+.botao--bloco{ width: 100%; }
+.botao[disabled]{ opacity: 0.55; cursor: not-allowed; }
+
+/* --------------------------------------------------------------------------
+   Hero (Home)
+   -------------------------------------------------------------------------- */
+.hero{
+  padding: 72px 0 64px;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(232,163,61,0.16), transparent 55%),
+    var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.hero .container{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero__eyebrow{
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: var(--teal);
+  font-weight: 600;
+  margin-bottom: 14px;
+  display: inline-block;
+}
+.hero h1{
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  max-width: 14ch;
+}
+.hero h1 em{
+  font-style: normal;
+  color: var(--amber-dark);
+}
+.hero p{
+  font-size: 1.08rem;
+  max-width: 46ch;
+  color: var(--ink-soft);
+}
+.hero__acoes{
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+.hero__stats{
+  display: flex;
+  gap: 28px;
+  margin-top: 40px;
+}
+.hero__stat b{
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--ink);
+}
+.hero__stat span{
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  opacity: 0.75;
+}
+
+.hero__painel{
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+.hero__painel-topo{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.hero__painel-avatar{
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  background: var(--teal-soft);
+  border: 1px solid var(--teal);
+}
+.hero__vaga-mini{
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.hero__vaga-mini:last-child{ margin-bottom: 0; }
+.hero__vaga-mini-info b{ display:block; font-size: 0.95rem; }
+.hero__vaga-mini-info span{ font-size: 0.8rem; opacity: 0.7; }
+.selo{
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: var(--teal-soft);
+  color: var(--teal);
+  border-radius: 999px;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Seções gerais
+   -------------------------------------------------------------------------- */
+.secao{ padding: 64px 0; }
+.secao--alt{ background: var(--bg-card); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.secao__cabecalho{
+  max-width: 60ch;
+  margin-bottom: 40px;
+}
+.secao__cabecalho .hero__eyebrow{ margin-bottom: 10px; }
+
+.grade-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.grade-2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cartao{
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+.cartao__icone{
+  width: 46px; height: 46px;
+  border-radius: var(--radius-sm);
+  background: var(--teal-soft);
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+.cartao h3{ font-size: 1.15rem; }
+.cartao p{ font-size: 0.95rem; opacity: 0.85; margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   Vagas (cards de listagem)
+   -------------------------------------------------------------------------- */
+.filtros-vagas{
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 32px;
+}
+.campo{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 160px;
+}
+.campo label{
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
+.campo input, .campo select, .campo textarea{
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--ink-soft);
+}
+.campo input:focus, .campo select:focus, .campo textarea:focus{
+  outline: 2px solid var(--amber);
+  outline-offset: 1px;
+}
+.campo--check{
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.lista-vagas{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.vaga-card{
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+.vaga-card__logo{
+  width: 54px; height: 54px;
+  border-radius: var(--radius-sm);
+  background: var(--ink);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+.vaga-card__topo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vaga-card h3{ font-size: 1.15rem; margin-bottom: 2px; }
+.vaga-card__empresa{ font-size: 0.9rem; opacity: 0.75; margin-bottom: 8px; }
+.vaga-card__meta{
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.vaga-card__meta span{ display: flex; align-items: center; gap: 6px; }
+.vaga-card__desc{
+  font-size: 0.9rem;
+  margin: 10px 0 0;
+  opacity: 0.85;
+  max-width: 62ch;
+}
+.vaga-card__acao{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.sem-resultado{
+  text-align: center;
+  padding: 48px 20px;
+  opacity: 0.7;
+  display: none;
+}
+.sem-resultado.visivel{ display: block; }
+
+/* --------------------------------------------------------------------------
+   Candidatura (upload x formulário)
+   -------------------------------------------------------------------------- */
+.escolha-candidatura{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+.opcao-candidatura{
+  background: var(--bg-card);
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: left;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.opcao-candidatura:hover, .opcao-candidatura:focus-visible{ border-color: var(--teal); }
+.opcao-candidatura.selecionada{ border-color: var(--amber-dark); background: #FFF8ED; }
+.opcao-candidatura__topo{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.opcao-candidatura__badge{
+  width: 40px; height: 40px;
+  border-radius: 999px;
+  background: var(--teal-soft);
+  color: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+}
+.opcao-candidatura p{ font-size: 0.9rem; opacity: 0.8; margin-bottom: 0; }
+
+.zona-upload{
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 44px 24px;
+  text-align: center;
+  background: var(--bg-card);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.zona-upload.arrastando{ border-color: var(--amber-dark); background: #FFF8ED; }
+.zona-upload__icone{ font-size: 2rem; margin-bottom: 12px; }
+.zona-upload small{ display: block; margin-top: 10px; opacity: 0.6; }
+.arquivo-selecionado{
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--teal-soft);
+  border: 1px solid var(--teal);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+}
+.arquivo-selecionado.visivel{ display: flex; }
+.arquivo-selecionado button{
+  background: none; border: none; color: var(--teal); font-weight: 700; text-decoration: underline;
+}
+
+.formulario{
+  display: none;
+}
+.formulario.visivel{ display: block; }
+.formulario-grade{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.formulario-grade .campo--largo{ grid-column: 1 / -1; }
+
+.painel-passo{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+.painel-passo span{
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--line);
+  color: var(--ink-soft);
+}
+.painel-passo span.ativo{ background: var(--ink); color: var(--white); }
+
+/* --------------------------------------------------------------------------
+   Fale conosco
+   -------------------------------------------------------------------------- */
+.contato-grade{
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 40px;
+}
+.contato-info .cartao{ margin-bottom: 16px; }
+.contato-info .cartao:last-child{ margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   Rodapé
+   -------------------------------------------------------------------------- */
+.rodape{
+  background: var(--ink);
+  color: rgba(255,255,255,0.85);
+  padding: 40px 0 24px;
+  margin-top: 40px;
+}
+.rodape .logo{ color: var(--white); }
+.rodape .logo span{ color: var(--amber); }
+.rodape__linhas{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.14);
+  font-size: 0.82rem;
+}
+
+/* --------------------------------------------------------------------------
+   Modal de Login / Cadastro
+   -------------------------------------------------------------------------- */
+.sobreposicao-modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 36, 56, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+.sobreposicao-modal.aberta{ display: flex; }
+
+.modal{
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  max-width: 420px;
+  width: 100%;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(15,36,56,0.25);
+}
+.modal__fechar{
+  position: absolute;
+  top: 16px; right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--ink-soft);
+  padding: 4px;
+}
+.modal__abas{
+  display: flex;
+  gap: 4px;
+  background: var(--bg);
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+.modal__aba{
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 9px 0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 999px;
+  color: var(--ink-soft);
+}
+.modal__aba.ativa{ background: var(--ink); color: var(--white); }
+.modal__form{ display: none; flex-direction: column; gap: 14px; }
+.modal__form.visivel{ display: flex; }
+.modal__rodape-form{
+  font-size: 0.85rem;
+  text-align: center;
+  opacity: 0.75;
+  margin-top: 6px;
+}
+.mensagem-sucesso{
+  display: none;
+  background: var(--teal-soft);
+  border: 1px solid var(--teal);
+  color: var(--teal);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 14px;
+}
+.mensagem-sucesso.visivel{ display: block; }
+
+/* menu mobile */
+.botao-menu{
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  font-size: 1.1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Responsivo
+   -------------------------------------------------------------------------- */
+@media (max-width: 880px){
+  .hero .container{ grid-template-columns: 1fr; }
+  .grade-3{ grid-template-columns: 1fr; }
+  .grade-2{ grid-template-columns: 1fr; }
+  .contato-grade{ grid-template-columns: 1fr; }
+  .escolha-candidatura{ grid-template-columns: 1fr; }
+  .formulario-grade{ grid-template-columns: 1fr; }
+  .vaga-card{ grid-template-columns: 1fr; text-align: left; }
+  .vaga-card__acao{ flex-direction: row; }
+  .nav-principal{
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px 20px;
+    gap: 14px;
+    display: none;
+  }
+  .nav-principal.aberto{ display: flex; }
+  .botao-menu{ display: block; }
+  .barra-acessibilidade .container{ justify-content: center; text-align: center; }
+}

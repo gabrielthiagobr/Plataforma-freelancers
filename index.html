@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAGA+ · Plataforma de vagas em tecnologia</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Barra de acessibilidade -->
+  <div class="barra-acessibilidade">
+    <div class="container">
+      <span class="barra-acessibilidade__texto">Feito para todas as idades: ajuste o site do seu jeito.</span>
+      <div class="barra-acessibilidade__controles">
+        <div class="barra-acessibilidade__grupo" role="group" aria-label="Tamanho do texto">
+          <button class="btn-fonte" data-fonte="diminuir" aria-label="Diminuir tamanho do texto">A-</button>
+          <button class="btn-fonte" data-fonte="resetar" aria-label="Restaurar tamanho do texto">A</button>
+          <button class="btn-fonte" data-fonte="aumentar" aria-label="Aumentar tamanho do texto">A+</button>
+        </div>
+        <button class="btn-contraste" aria-pressed="false">Alto contraste</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cabeçalho -->
+  <header class="cabecalho">
+    <div class="container">
+      <a href="index.html" class="logo">Vaga<span>+</span></a>
+      <nav class="nav-principal" aria-label="Navegação principal">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="vagas.html">Vagas</a>
+        <a href="candidatura.html">Candidatar-se</a>
+        <a href="contato.html">Fale conosco</a>
+      </nav>
+      <div class="acoes-cabecalho">
+        <a href="#" class="botao botao--fantasma" data-abrir-modal="login">Entrar</a>
+        <a href="#" class="botao botao--primario" data-abrir-modal="cadastro">Criar conta</a>
+        <button class="botao-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="hero__eyebrow">Vagas de tecnologia · em um só lugar</span>
+        <h1>Encontre a vaga certa, <em>sem complicação</em></h1>
+        <p>O VAGA+ reúne vagas de tecnologia de empresas reais, com salário, carga horária e descrição claros — para qualquer pessoa, de qualquer idade, encontrar sua próxima oportunidade sem depender de redes complexas ou jargão difícil.</p>
+        <div class="hero__acoes">
+          <a href="vagas.html" class="botao botao--primario">Ver vagas abertas</a>
+          <a href="#" class="botao botao--fantasma" data-abrir-modal="cadastro">Cadastrar currículo</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat"><b>128</b><span>vagas ativas</span></div>
+          <div class="hero__stat"><b>46</b><span>empresas parceiras</span></div>
+          <div class="hero__stat"><b>100%</b><span>gratuito</span></div>
+        </div>
+      </div>
+
+      <div class="hero__painel" aria-hidden="true">
+        <div class="hero__painel-topo">
+          <div class="hero__painel-avatar"></div>
+          <div>
+            <b style="font-size:0.95rem">Vagas recomendadas</b>
+            <div style="font-size:0.8rem; opacity:0.6">atualizado hoje</div>
+          </div>
+        </div>
+        <div class="hero__vaga-mini">
+          <div class="hero__vaga-mini-info">
+            <b>Desenvolvedor(a) Front-end</b>
+            <span>NovaTech · R$ 3.800 / mês</span>
+          </div>
+          <span class="selo">Remoto</span>
+        </div>
+        <div class="hero__vaga-mini">
+          <div class="hero__vaga-mini-info">
+            <b>Analista de Suporte</b>
+            <span>ConectaTI · R$ 2.400 / mês</span>
+          </div>
+          <span class="selo">Híbrido</span>
+        </div>
+        <div class="hero__vaga-mini">
+          <div class="hero__vaga-mini-info">
+            <b>Estágio em TI</b>
+            <span>DataFlow · R$ 1.600 / mês</span>
+          </div>
+          <span class="selo">Presencial</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais -->
+  <section class="secao">
+    <div class="container">
+      <div class="secao__cabecalho">
+        <span class="hero__eyebrow">Por que o VAGA+</span>
+        <h2>Um site pensado para o público em geral</h2>
+        <p>Nosso diferencial é simplicidade: qualquer pessoa consegue usar, buscar e se candidatar sem depender de conhecimento técnico.</p>
+      </div>
+      <div class="grade-3">
+        <div class="cartao">
+          <div class="cartao__icone">01</div>
+          <h3>Acessível para todas as idades</h3>
+          <p>Textos claros, botões grandes e uma barra de acessibilidade para ajustar o tamanho da letra e o contraste em qualquer página.</p>
+        </div>
+        <div class="cartao">
+          <div class="cartao__icone">02</div>
+          <h3>Informação completa e honesta</h3>
+          <p>Cada vaga mostra empresa, salário, carga horária e uma descrição breve — sem letras miúdas escondidas.</p>
+        </div>
+        <div class="cartao">
+          <div class="cartao__icone">03</div>
+          <h3>Candidatura do seu jeito</h3>
+          <p>Envie seu currículo já pronto em anexo ou preencha um formulário simples com seus dados, como preferir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section class="secao secao--alt">
+    <div class="container">
+      <div class="secao__cabecalho">
+        <span class="hero__eyebrow">Como funciona</span>
+        <h2>Do cadastro à candidatura em 3 passos</h2>
+      </div>
+      <div class="grade-3">
+        <div class="cartao">
+          <div class="cartao__icone">1</div>
+          <h3>Crie sua conta</h3>
+          <p>Cadastre-se gratuitamente com seu e-mail para acompanhar vagas e candidaturas.</p>
+        </div>
+        <div class="cartao">
+          <div class="cartao__icone">2</div>
+          <h3>Explore as vagas</h3>
+          <p>Filtre por área, carga horária ou tipo de trabalho na página de Vagas.</p>
+        </div>
+        <div class="cartao">
+          <div class="cartao__icone">3</div>
+          <h3>Candidate-se</h3>
+          <p>Envie seu currículo em anexo ou preencha o formulário com seus dados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="secao">
+    <div class="container" style="text-align:center; max-width:640px;">
+      <h2>Pronto para encontrar sua próxima vaga?</h2>
+      <p>Leva menos de 2 minutos para se cadastrar e começar a se candidatar.</p>
+      <div class="hero__acoes" style="justify-content:center;">
+        <a href="#" class="botao botao--primario" data-abrir-modal="cadastro">Criar conta grátis</a>
+        <a href="vagas.html" class="botao botao--fantasma">Ver vagas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <div class="container">
+      <a href="index.html" class="logo">Vaga<span>+</span></a>
+      <p style="max-width:52ch; margin-top:12px; opacity:0.85;">Plataforma criada como projeto de estudo, para praticar HTML, CSS e JavaScript, conectando pessoas a vagas de tecnologia.</p>
+      <div class="rodape__linhas">
+        <span>© 2026 VAGA+ · Projeto de estudo</span>
+        <span><a href="contato.html">Fale conosco</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Login / Cadastro -->
+  <div class="sobreposicao-modal" id="modalConta">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="tituloModal">
+      <button class="modal__fechar" aria-label="Fechar">×</button>
+      <div class="modal__abas">
+        <button class="modal__aba ativa" data-aba="login" id="tituloModal">Entrar</button>
+        <button class="modal__aba" data-aba="cadastro">Criar conta</button>
+      </div>
+
+      <form class="modal__form visivel" data-form="login">
+        <div class="campo">
+          <label for="loginEmail">E-mail</label>
+          <input type="email" id="loginEmail" required placeholder="seuemail@exemplo.com">
+        </div>
+        <div class="campo">
+          <label for="loginSenha">Senha</label>
+          <input type="password" id="loginSenha" required placeholder="Sua senha">
+        </div>
+        <button type="submit" class="botao botao--primario botao--bloco">Entrar</button>
+        <div class="mensagem-sucesso">Login realizado com sucesso!</div>
+        <p class="modal__rodape-form">Ainda não tem conta? <a href="#" onclick="return false" data-aba-link>Criar conta</a></p>
+      </form>
+
+      <form class="modal__form" data-form="cadastro">
+        <div class="campo">
+          <label for="cadNome">Nome completo</label>
+          <input type="text" id="cadNome" required placeholder="Seu nome">
+        </div>
+        <div class="campo">
+          <label for="cadEmail">E-mail</label>
+          <input type="email" id="cadEmail" required placeholder="seuemail@exemplo.com">
+        </div>
+        <div class="campo">
+          <label for="cadSenha">Senha</label>
+          <input type="password" id="cadSenha" required placeholder="Crie uma senha">
+        </div>
+        <button type="submit" class="botao botao--primario botao--bloco">Criar conta</button>
+        <div class="mensagem-sucesso">Conta criada com sucesso!</div>
+        <p class="modal__rodape-form">Já tem conta? <a href="#" onclick="return false" data-aba-link>Entrar</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // pequeno atalho: links "criar conta"/"entrar" dentro do modal trocam de aba
+    document.querySelectorAll('[data-aba-link]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var outraAba = link.closest('form').getAttribute('data-form') === 'login' ? 'cadastro' : 'login';
+        document.querySelector('.modal__aba[data-aba="' + outraAba + '"]').click();
+      });
+    });
+  </script>
+</body>
+</html>

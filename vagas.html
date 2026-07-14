@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vagas · VAGA+</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="barra-acessibilidade">
+    <div class="container">
+      <span class="barra-acessibilidade__texto">Feito para todas as idades: ajuste o site do seu jeito.</span>
+      <div class="barra-acessibilidade__controles">
+        <div class="barra-acessibilidade__grupo" role="group" aria-label="Tamanho do texto">
+          <button class="btn-fonte" data-fonte="diminuir" aria-label="Diminuir tamanho do texto">A-</button>
+          <button class="btn-fonte" data-fonte="resetar" aria-label="Restaurar tamanho do texto">A</button>
+          <button class="btn-fonte" data-fonte="aumentar" aria-label="Aumentar tamanho do texto">A+</button>
+        </div>
+        <button class="btn-contraste" aria-pressed="false">Alto contraste</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="cabecalho">
+    <div class="container">
+      <a href="index.html" class="logo">Vaga<span>+</span></a>
+      <nav class="nav-principal" aria-label="Navegação principal">
+        <a href="index.html">Home</a>
+        <a href="vagas.html" aria-current="page">Vagas</a>
+        <a href="candidatura.html">Candidatar-se</a>
+        <a href="contato.html">Fale conosco</a>
+      </nav>
+      <div class="acoes-cabecalho">
+        <a href="#" class="botao botao--fantasma" data-abrir-modal="login">Entrar</a>
+        <a href="#" class="botao botao--primario" data-abrir-modal="cadastro">Criar conta</a>
+        <button class="botao-menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="secao" style="padding-bottom:0;">
+    <div class="container">
+      <span class="hero__eyebrow">Vagas abertas</span>
+      <h1 style="font-size:2rem; max-width:none;">Vagas de tecnologia disponíveis agora</h1>
+      <p style="max-width:60ch;">Filtre por área, carga horária ou modelo de trabalho para encontrar a vaga certa para você.</p>
+    </div>
+  </section>
+
+  <section class="secao" style="padding-top:24px;">
+    <div class="container">
+
+      <form class="filtros-vagas" id="formFiltros">
+        <div class="campo">
+          <label for="filtroBusca">Buscar por cargo ou empresa</label>
+          <input type="search" id="filtroBusca" placeholder="Ex: front-end, NovaTech...">
+        </div>
+        <div class="campo">
+          <label for="filtroArea">Área</label>
+          <select id="filtroArea">
+            <option value="">Todas as áreas</option>
+            <option value="desenvolvimento">Desenvolvimento</option>
+            <option value="suporte">Suporte / Infraestrutura</option>
+            <option value="dados">Dados</option>
+            <option value="design">Design de produto</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="filtroModelo">Modelo de trabalho</label>
+          <select id="filtroModelo">
+            <option value="">Todos</option>
+            <option value="remoto">Remoto</option>
+            <option value="hibrido">Híbrido</option>
+            <option value="presencial">Presencial</option>
+          </select>
+        </div>
+        <div class="campo campo--check" style="flex:0 0 auto;">
+          <input type="checkbox" id="filtroEstagio">
+          <label for="filtroEstagio" style="opacity:1;">Somente estágio</label>
+        </div>
+      </form>
+
+      <div class="lista-vagas" id="listaVagas" aria-live="polite">
+        <!-- as vagas são inseridas aqui via JavaScript -->
+      </div>
+
+      <div class="sem-resultado" id="semResultado">
+        <h3>Nenhuma vaga encontrada</h3>
+        <p>Tente ajustar os filtros de busca.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <div class="container">
+      <a href="index.html" class="logo">Vaga<span>+</span></a>
+      <div class="rodape__linhas">
+        <span>© 2026 VAGA+ · Projeto de estudo</span>
+        <span><a href="contato.html">Fale conosco</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de Login / Cadastro (igual em todas as páginas) -->
+  <div class="sobreposicao-modal" id="modalConta">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="tituloModal">
+      <button class="modal__fechar" aria-label="Fechar">×</button>
+      <div class="modal__abas">
+        <button class="modal__aba ativa" data-aba="login" id="tituloModal">Entrar</button>
+        <button class="modal__aba" data-aba="cadastro">Criar conta</button>
+      </div>
+      <form class="modal__form visivel" data-form="login">
+        <div class="campo">
+          <label for="loginEmail">E-mail</label>
+          <input type="email" id="loginEmail" required placeholder="seuemail@exemplo.com">
+        </div>
+        <div class="campo">
+          <label for="loginSenha">Senha</label>
+          <input type="password" id="loginSenha" required placeholder="Sua senha">
+        </div>
+        <button type="submit" class="botao botao--primario botao--bloco">Entrar</button>
+        <div class="mensagem-sucesso">Login realizado com sucesso!</div>
+        <p class="modal__rodape-form">Ainda não tem conta? <a href="#" onclick="return false" data-aba-link>Criar conta</a></p>
+      </form>
+      <form class="modal__form" data-form="cadastro">
+        <div class="campo">
+          <label for="cadNome">Nome completo</label>
+          <input type="text" id="cadNome" required placeholder="Seu nome">
+        </div>
+        <div class="campo">
+          <label for="cadEmail">E-mail</label>
+          <input type="email" id="cadEmail" required placeholder="seuemail@exemplo.com">
+        </div>
+        <div class="campo">
+          <label for="cadSenha">Senha</label>
+          <input type="password" id="cadSenha" required placeholder="Crie uma senha">
+        </div>
+        <button type="submit" class="botao botao--primario botao--bloco">Criar conta</button>
+        <div class="mensagem-sucesso">Conta criada com sucesso!</div>
+        <p class="modal__rodape-form">Já tem conta? <a href="#" onclick="return false" data-aba-link>Entrar</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/vagas.js"></script>
+  <script>
+    document.querySelectorAll('[data-aba-link]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var outraAba = link.closest('form').getAttribute('data-form') === 'login' ? 'cadastro' : 'login';
+        document.querySelector('.modal__aba[data-aba="' + outraAba + '"]').click();
+      });
+    });
+  </script>
+</body>
+</html>
