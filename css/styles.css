@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root{
+  --ink: #0D1526;
+  --ink-soft: #4A5568;
+  --paper: #F7F1E2;
+  --paper-card: #FFFFFF;
+
+  --mustard: #F2A900;
+  --mustard-dark: #C4870A;
+  --cobalt: #3D5AFE;
+  --coral: #FF5A36;
+
+  --line-on-paper: rgba(13, 21, 38, 0.14);
+  --line-on-ink: rgba(247, 241, 226, 0.16);
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Public Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 20px 45px rgba(13, 21, 38, 0.16);
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; } /* Deixa a transição entre as páginas de forma suáve */
+
+body{
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+h1, h2, h3{
+    font-family: var(--font-display);
+    line-height: 1.1;
+    margin: 0 0 16px;
+}
+
+h1{ font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 600; } /* Existe uma variação --> clamp(mínimo, ideal, máximo) */
+h2{ font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 600; }
+h3{ font-size: 1.15rem; font-weight: 600; }  /* Não muda (1.15rem será sempre 1.15rem, independente da situação */
+
+p{
+    margin: 0 0 16px;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 32px;
+}
+/* ===== Botões ===== */
