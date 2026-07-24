@@ -64,7 +64,59 @@ img{
 .container{
     width: 100%;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     padding: 0 32px;
 }
 /* ===== Botões ===== */
+
+.botao {
+    padding: 10px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 1.5px solid transparent;
+}
+
+.botao--fantasma{
+    background: transparent;
+    border-color: currentColor;
+    color: inherit;
+}
+
+.botao--primario{
+    background: var(--mustard);
+    border-color: var(--ink-soft);
+    color: var(--ink);
+}
+
+.cabecalho{
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line-on-paper) ;
+}
+
+.cabecalho .container{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.nav-principal{
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.nav-principal a{
+    font-size: 0.95rem;
+    color: var(--ink);
+}
+
+.nav-principal a.atual{
+    border-bottom: 2px solid var(--mustard);
+}
