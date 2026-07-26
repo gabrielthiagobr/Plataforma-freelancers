@@ -67,7 +67,202 @@ img{
     margin: 0 auto;
     padding: 0 32px;
 }
+
 /* ===== Botões ===== */
+
+
+/* ====== CONFIGURAÇÕES GERAIS ====== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+    color:#333;
+    line-height:1.6;
+}
+
+/* ====== CABEÇALHO ====== */
+
+header{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:25px;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+header h1{
+    margin-bottom:20px;
+}
+
+/* ====== MENU ====== */
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+nav button{
+    background:white;
+    color:#0d6efd;
+    border:none;
+    padding:10px 22px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav button:hover{
+    background:#dbe8ff;
+    transform:translateY(-2px);
+}
+
+/* ====== ÁREA DAS VAGAS ====== */
+
+.vagas{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+}
+
+.vagas h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#0d6efd;
+}
+
+/* ====== CARD DAS VAGAS ====== */
+
+.vaga{
+    background:white;
+    padding:20px;
+    margin-bottom:25px;
+    border-radius:12px;
+    box-shadow:0 5px 12px rgba(0,0,0,.12);
+    transition:.3s;
+}
+
+.vaga:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+}
+
+.vaga h3{
+    color:#0d6efd;
+    margin-bottom:10px;
+}
+
+.vaga p{
+    margin:8px 0;
+}
+
+/* ====== BOTÃO ====== */
+
+.botao{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 20px;
+    background:#0d6efd;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.botao:hover{
+    background:#084fc7;
+}
+
+/* ====== MODAIS ====== */
+
+#modalHome,
+#modalVagas,
+#modalCandidaturas{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:90%;
+    max-width:500px;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+    z-index:1000;
+}
+
+#modalHome h2,
+#modalVagas h2,
+#modalCandidaturas h2{
+    color:#0d6efd;
+    margin-bottom:20px;
+}
+
+#modalCandidaturas input,
+#modalCandidaturas select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+#modalCandidaturas button{
+    width:100%;
+    padding:12px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+#modalCandidaturas button:hover{
+    background:#084fc7;
+}
+
+/* ====== RODAPÉ ====== */
+
+footer{
+    margin-top:50px;
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* ====== RESPONSIVO ====== */
+
+@media (max-width:600px){ 
+    header h1{
+        font-size:24px;
+    }
+
+    nav{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    nav button{
+        width:200px;
+    }
+
+    .vaga{
+        padding:15px;
+    }
+
 
 .botao {
     padding: 10px 20px;
@@ -119,4 +314,87 @@ img{
 
 .nav-principal a.atual{
     border-bottom: 2px solid var(--mustard);
+}
+}
+
+/* MODAL PERFIL ==== */
+.modal-perfil{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 21, 38, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-perfil__conteudo{
+  background: var(--paper);
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn{
+  from{ opacity: 0; transform: translateY(-20px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+.modal-perfil__fechar{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-perfil__fechar:hover{
+  color: var(--coral);
+  transform: rotate(90deg);
+}
+
+form .form-group{
+  margin-bottom: 20px;
+}
+
+.form-group label{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line-on-paper);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+}
+
+.form-group textarea{
+  resize: vertical;
+  min-height: 100px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  outline: none;
+  border-color: var(--mustard);
 }
