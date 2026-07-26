@@ -316,3 +316,85 @@ footer{
     border-bottom: 2px solid var(--mustard);
 }
 }
+
+/* MODAL PERFIL ==== */
+.modal-perfil{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 21, 38, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-perfil__conteudo{
+  background: var(--paper);
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn{
+  from{ opacity: 0; transform: translateY(-20px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+.modal-perfil__fechar{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-perfil__fechar:hover{
+  color: var(--coral);
+  transform: rotate(90deg);
+}
+
+form .form-group{
+  margin-bottom: 20px;
+}
+
+.form-group label{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line-on-paper);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+}
+
+.form-group textarea{
+  resize: vertical;
+  min-height: 100px;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  outline: none;
+  border-color: var(--mustard);
+}
