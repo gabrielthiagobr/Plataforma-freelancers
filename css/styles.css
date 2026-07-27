@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
+/*
+  CONCEITO: "Mural de vagas"
+  Um quadro de avisos de bairro reinventado pro mundo tech: cartões de índice
+  levemente inclinados, carimbos em vez de badges genéricos, e uma trilha
+  conectada para o passo a passo (porque ali a ordem realmente importa).
+  Seções alternam entre tinta (ink) e papel (paper) e ocupam a largura toda
+  da tela — o container só organiza o texto, nunca pinta um "bloco".
+*/
+
 :root{
   --ink: #0D1526;
   --ink-soft: #4A5568;
@@ -25,376 +34,513 @@
 
 *, *::before, *::after{ box-sizing: border-box; }
 
-html{ scroll-behavior: smooth; } /* Deixa a transição entre as páginas de forma suáve */
+html{ scroll-behavior: smooth; }
 
 body{
-    margin: 0;
-    font-family: var(--font-body);
-    color: var(--ink);
-    background: var(--paper);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
+
+img{ max-width: 100%; display: block; }
+a{ color: inherit; text-decoration: none; }
 
 h1, h2, h3{
-    font-family: var(--font-display);
-    line-height: 1.1;
-    margin: 0 0 16px;
+  font-family: var(--font-display);
+  line-height: 1.1;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
 }
 
-h1{ font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 600; } /* Existe uma variação --> clamp(mínimo, ideal, máximo) */
+h1{ font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 600; }
 h2{ font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 600; }
-h3{ font-size: 1.15rem; font-weight: 600; }  /* Não muda (1.15rem será sempre 1.15rem, independente da situação */
+h3{ font-size: 1.15rem; font-weight: 600; }
 
-p{
-    margin: 0 0 16px;
-}
-
-a{
-    color: inherit;
-    text-decoration: none;
-}
-
-img{
-    display: block;
-    max-width: 100%;
-}
+p{ margin: 0 0 12px; }
 
 .container{
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 32px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
 /* ===== Botões ===== */
-
-
-/* ====== CONFIGURAÇÕES GERAIS ====== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    background:#f4f7fc;
-    color:#333;
-    line-height:1.6;
-}
-
-/* ====== CABEÇALHO ====== */
-
-header{
-    background:#0d6efd;
-    color:white;
-    text-align:center;
-    padding:25px;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
-}
-
-header h1{
-    margin-bottom:20px;
-}
-
-/* ====== MENU ====== */
-
-nav{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-nav button{
-    background:white;
-    color:#0d6efd;
-    border:none;
-    padding:10px 22px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-nav button:hover{
-    background:#dbe8ff;
-    transform:translateY(-2px);
-}
-
-/* ====== ÁREA DAS VAGAS ====== */
-
-.vagas{
-    width:90%;
-    max-width:1000px;
-    margin:40px auto;
-}
-
-.vagas h2{
-    text-align:center;
-    margin-bottom:30px;
-    color:#0d6efd;
-}
-
-/* ====== CARD DAS VAGAS ====== */
-
-.vaga{
-    background:white;
-    padding:20px;
-    margin-bottom:25px;
-    border-radius:12px;
-    box-shadow:0 5px 12px rgba(0,0,0,.12);
-    transition:.3s;
-}
-
-.vaga:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 18px rgba(0,0,0,.18);
-}
-
-.vaga h3{
-    color:#0d6efd;
-    margin-bottom:10px;
-}
-
-.vaga p{
-    margin:8px 0;
-}
-
-/* ====== BOTÃO ====== */
-
 .botao{
-    display:inline-block;
-    margin-top:15px;
-    padding:10px 20px;
-    background:#0d6efd;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    transition:.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
-.botao:hover{
-    background:#084fc7;
-}
-
-/* ====== MODAIS ====== */
-
-#modalHome,
-#modalVagas,
-#modalCandidaturas{
-    display:none;
-    position:fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    width:90%;
-    max-width:500px;
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,.3);
-    z-index:1000;
-}
-
-#modalHome h2,
-#modalVagas h2,
-#modalCandidaturas h2{
-    color:#0d6efd;
-    margin-bottom:20px;
-}
-
-#modalCandidaturas input,
-#modalCandidaturas select{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    margin-bottom:15px;
-    border:1px solid #ccc;
-    border-radius:6px;
-}
-
-#modalCandidaturas button{
-    width:100%;
-    padding:12px;
-    background:#0d6efd;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-}
-
-#modalCandidaturas button:hover{
-    background:#084fc7;
-}
-
-/* ====== RODAPÉ ====== */
-
-footer{
-    margin-top:50px;
-    background:#0d6efd;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-/* ====== RESPONSIVO ====== */
-
-@media (max-width:600px){ 
-    header h1{
-        font-size:24px;
-    }
-
-    nav{
-        flex-direction:column;
-        align-items:center;
-    }
-
-    nav button{
-        width:200px;
-    }
-
-    .vaga{
-        padding:15px;
-    }
-
-
-.botao {
-    padding: 10px 20px;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
-    font-size: 0.95rem;
-    font-weight: 600;
-    border: 1.5px solid transparent;
-}
-
-.botao--fantasma{
-    background: transparent;
-    border-color: currentColor;
-    color: inherit;
-}
+.botao:hover{ transform: translateY(-2px); }
 
 .botao--primario{
-    background: var(--mustard);
-    border-color: var(--ink-soft);
-    color: var(--ink);
+  background: var(--mustard);
+  color: var(--ink);
 }
+.botao--primario:hover{ background: var(--mustard-dark); }
 
+.botao--fantasma{
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+}
+.cabecalho .botao--fantasma{ color: var(--ink); border-color: var(--line-on-paper); }
+.cabecalho .botao--fantasma:hover{ border-color: var(--ink); }
+
+.hero .botao--fantasma{ color: var(--paper); border-color: var(--line-on-ink); }
+.hero .botao--fantasma:hover{ border-color: var(--paper); }
+
+/* ===== Cabeçalho ===== */
 .cabecalho{
-    position: sticky;
-    top: 0;
-    z-index: 30;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line-on-paper) ;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line-on-paper);
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
-.cabecalho .container{ 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0px;
+.cabecalho .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
-.nav-principal{
-    display: flex;
-    gap: 32px;
-    align-items: center;
+.logo{
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--ink);
 }
+
+.nav-principal{ display: flex; gap: 32px; align-items: center; }
 
 .nav-principal a{
-    font-size: 0.95rem;
-    color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.nav-principal a:hover{ color: var(--ink); }
+.nav-principal a.atual{ color: var(--ink); border-bottom-color: var(--mustard); }
+
+.acoes-cabecalho{ display: flex; align-items: center; gap: 12px; }
+
+.botao-menu{
+  display: none;
+  background: transparent;
+  border: 1.5px solid var(--line-on-paper);
+  border-radius: var(--radius-sm);
+  font-size: 1.2rem;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--ink);
 }
 
-.nav-principal a.atual{
-    border-bottom: 2px solid var(--mustard);
-}
+/* ===== Eyebrow (usado em vários lugares) ===== */
+.hero__eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0 0 4px;
+  border-bottom: 1px dashed currentColor;
+  margin-bottom: 20px;
 }
 
-/* MODAL PERFIL ==== */
-.modal-perfil{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(13, 21, 38, 0.75);
-  backdrop-filter: blur(4px);
-  z-index: 1000;
+/* ===== Hero (full-bleed, tinta) ===== */
+.hero{
+  background: var(--ink);
+  color: var(--paper);
+  padding: 96px 0 140px;
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero .hero__eyebrow{ color: var(--mustard); }
+
+.hero .container{
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.hero h1{ color: var(--paper); }
+.hero h1 em{ font-style: italic; color: var(--mustard); }
+
+.hero p{ color: rgba(247, 241, 226, 0.75); }
+
+.hero__acoes{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: 8px;
+}
+.hero__acoes p{ width: 100%; max-width: 48ch; }
+
+/* Painel = mural com cartões espalhados, tipo fichário */
+.hero__painel{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transform: translateY(24px);
+}
+
+.hero__painel-topo{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--paper);
+  padding-bottom: 14px;
+  margin-bottom: 4px;
+  border-bottom: 1px dashed var(--line-on-ink);
+}
+
+.hero__painel-topo b{ display: block; font-size: 0.95rem; }
+.hero__painel-topo div div{ font-size: 0.78rem; color: rgba(247, 241, 226, 0.6); }
+
+.hero__painel-avatar{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: conic-gradient(from 200deg, var(--mustard), var(--coral), var(--cobalt), var(--mustard));
+  flex-shrink: 0;
+}
+
+/* cartões "fichário" — leve rotação alternada, sombra de papel empilhado */
+.hero__vaga-mini{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--paper-card);
+  color: var(--ink);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+.hero__vaga-mini:nth-of-type(1){ transform: rotate(-1.4deg); }
+.hero__vaga-mini:nth-of-type(2){ transform: rotate(1deg) translateX(10px); }
+.hero__vaga-mini:nth-of-type(3){ transform: rotate(-0.6deg); }
+
+.hero__vaga-mini-info b{ display: block; font-size: 0.92rem; margin-bottom: 2px; }
+.hero__vaga-mini-info span{ font-size: 0.82rem; color: var(--ink-soft); }
+
+/* selo = carimbo */
+.selo{
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--coral);
+  border: 1.5px dashed var(--coral);
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transform: rotate(-3deg);
+}
+
+/* ===== Seções gerais (papel) ===== */
+.secao{
+  padding: 110px 0;
+}
+
+.secao--alt{
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.secao__cabecalho{
+  max-width: 620px;
+  margin: 0 0 56px;
+}
+.secao--alt .secao__cabecalho{ margin: 0 auto 72px; text-align: center; }
+.secao--alt .hero__eyebrow{ color: var(--mustard); }
+.secao--alt h2{ color: var(--paper); }
+.secao--alt p{ color: rgba(247, 241, 226, 0.72); }
+
+/* ===== Grade de cartões — seção "por quê" (papel): fichas de catálogo ===== */
+.secao:not(.secao--alt) .grade-3{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.secao:not(.secao--alt) .grade-3 .cartao:nth-child(2){
+  transform: translateY(-18px);
+}
+
+.secao:not(.secao--alt) .cartao{
+  background: var(--paper-card);
+  border: 1px solid var(--line-on-paper);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.secao:not(.secao--alt) .cartao:hover{ transform: translateY(-6px); }
+.secao:not(.secao--alt) .grade-3 .cartao:nth-child(2):hover{ transform: translateY(-24px); }
+
+.secao:not(.secao--alt) .cartao__icone{
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--mustard-dark);
+  border: 1.5px dashed var(--mustard-dark);
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  transform: rotate(-4deg);
 }
 
-.modal-perfil__conteudo{
-  background: var(--paper);
-  width: 100%;
-  max-width: 500px;
-  padding: 30px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+.cartao p{ margin-bottom: 0; font-size: 0.95rem; color: var(--ink-soft); }
+
+/* Grade de vagas (página vagas.html) — reaproveita o .cartao, só muda pra 2 colunas,
+   já que cada card de vaga tem mais informação que os cards de "por quê" */
+.grade-vagas{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.grade-vagas .cartao p{ margin-bottom: 6px; }
+.grade-vagas .cartao .botao{ margin-top: 12px; }
+
+@media (max-width: 720px){
+  .grade-vagas{ grid-template-columns: 1fr; }
+}
+
+/* ===== "Como funciona" (tinta): trilha conectada — aqui a ordem importa ===== */
+.secao--alt .grade-3{
   position: relative;
-  animation: fadeIn 0.3s ease;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding-top: 10px;
 }
 
-@keyframes fadeIn{
+.secao--alt .grade-3::before{
+  content: "";
+  position: absolute;
+  top: 27px;
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--line-on-ink) 0 8px, transparent 8px 16px);
+  z-index: 0;
+}
+
+.secao--alt .cartao{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.secao--alt .cartao__icone{
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1rem;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--mustard);
+  color: var(--ink);
+}
+
+.secao--alt .cartao h3{ color: var(--paper); }
+.secao--alt .cartao p{ color: rgba(247, 241, 226, 0.68); font-size: 0.95rem; }
+
+/* ===== CTA final — faixa cheia de cor ===== */
+.secao:last-of-type:not(.secao--alt){
+  background: var(--mustard);
+  padding: 96px 0;
+}
+.secao:last-of-type:not(.secao--alt) h2,
+.secao:last-of-type:not(.secao--alt) p{ color: var(--ink); }
+.secao:last-of-type:not(.secao--alt) .botao--primario{ background: var(--ink); color: var(--paper); }
+.secao:last-of-type:not(.secao--alt) .botao--primario:hover{ background: #000; }
+.secao:last-of-type:not(.secao--alt) .botao--fantasma{ color: var(--ink); border-color: var(--ink); }
+
+/* ===== Rodapé ===== */
+.rodape{
+  background: var(--ink);
+  color: var(--paper);
+  padding: 56px 0 36px;
+}
+.rodape .logo{ color: var(--paper); }
+.rodape p{ color: rgba(247, 241, 226, 0.7); }
+
+.rodape__linhas{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--line-on-ink);
+  font-size: 0.85rem;
+  color: rgba(247, 241, 226, 0.65);
+}
+.rodape__linhas a{ color: var(--paper); text-decoration: underline; }
+.rodape__linhas a:hover{ color: var(--mustard); }
+
+/* ===== Modais =====
+   Classe genérica ".modal" cuida do comportamento comum a QUALQUER modal
+   (overlay escuro cobrindo a tela, caixa branca centralizada). Cada modal
+   específico (.modal-perfil, .modal-login) só herda isso — sem duplicar CSS.
+*/
+.modal{
+  display: none; /* controlado via JS (mudado pra "flex" ao abrir) */
+  position: fixed;
+  inset: 0; /* atalho pra top:0; right:0; bottom:0; left:0 — cobre a tela toda */
+  background: rgba(13, 21, 38, 0.75);
+  backdrop-filter: blur(4px); /* desfoca o conteúdo atrás do modal */
+  align-items: center;
+  justify-content: center;
+  z-index: 50; /* acima do cabeçalho (que usa z-index: 30) */
+  padding: 24px;
+}
+
+.modal__conteudo{
+  background: var(--paper-card);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  max-width: 440px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow);
+  animation: modalEntrada 0.3s ease;
+}
+
+@keyframes modalEntrada{
   from{ opacity: 0; transform: translateY(-20px); }
   to{ opacity: 1; transform: translateY(0); }
 }
 
-.modal-perfil__fechar{
+.modal__fechar{
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
+  top: 16px;
+  right: 16px;
+  background: transparent;
   border: none;
-  font-size: 1.5rem;
-  color: var(--ink-soft);
+  font-size: 1.6rem;
+  line-height: 1;
   cursor: pointer;
-  transition: 0.2s;
+  color: var(--ink-soft);
+  transition: color 0.2s ease, transform 0.2s ease;
 }
+.modal__fechar:hover{ color: var(--coral); transform: rotate(90deg); }
 
-.modal-perfil__fechar:hover{
-  color: var(--coral);
-  transform: rotate(90deg);
-}
-
-form .form-group{
-  margin-bottom: 20px;
+/* ===== Formulários dentro dos modais ===== */
+.form-group{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
 }
 
 .form-group label{
-  display: block;
-  font-weight: 500;
-  margin-bottom: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--ink);
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--line-on-paper);
+  padding: 10px 14px;
+  border: 1.5px solid var(--line-on-paper);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  outline: none;
+  border-color: var(--cobalt);
 }
 
 .form-group textarea{
   resize: vertical;
-  min-height: 100px;
+  min-height: 80px;
 }
 
-input:focus,
-select:focus,
-textarea:focus{
-  outline: none;
-  border-color: var(--mustard);
+/* ===== Responsivo ===== */
+@media (max-width: 960px){
+  .hero{ min-height: auto; padding: 72px 0 88px; }
+  .hero .container{ grid-template-columns: 1fr; gap: 48px; }
+  .hero__painel{ transform: none; }
+
+  .secao:not(.secao--alt) .grade-3,
+  .secao--alt .grade-3{ grid-template-columns: repeat(2, 1fr); }
+  .secao:not(.secao--alt) .grade-3 .cartao:nth-child(2){ transform: none; }
+  .secao--alt .grade-3::before{ display: none; }
+}
+
+@media (max-width: 720px){
+  .nav-principal{ display: none; }
+  .botao-menu{ display: inline-flex; }
+
+  .secao:not(.secao--alt) .grade-3,
+  .secao--alt .grade-3{ grid-template-columns: 1fr; }
+
+  .hero__vaga-mini{ transform: none !important; }
+
+  .secao{ padding: 64px 0; }
+}
+
+/* ===== Acessibilidade base ===== */
+a:focus-visible,
+button:focus-visible{
+  outline: 2px solid var(--cobalt);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+  html{ scroll-behavior: auto; }
 }

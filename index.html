@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Plataforma de vagas na área de tecnologia</title>
 	<link rel="stylesheet" href="css/styles.css">
-	<script src="/JS/main.js"></script>
+	<script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -74,7 +74,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="secao">
 		<div class="container">
 			<div class="secao__cabecalho">
@@ -107,7 +106,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="secao secao--alt">
 		<div class="container">
 			<div class="secao__cabecalho">
@@ -135,7 +133,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section class="secao">
 		<div class="container" style="text-align: center; max-width: 640px;">
 			<h2>Pronto para encontrar sua próxima vaga?</h2>
@@ -145,15 +142,13 @@
 				<a href="vagas.html" class="botao botao--fantasma">Ver vagas</a>
 			</div>
 		</div>
-	</section>	
+	</section>
 
 	<footer class="rodape">
 		<div class="container">
 			<a href="index.html" class="logo">Colocar LOGO</a>
-			<p style="max-width: 52ch; margin-top: 12px; opacity: 0.85;"> Plataforma criada em grupo como projeto de
-			 estudo, para praticar HTML, CSS e JavaScript, conectando pessoas a vagas de tecnologia.
-						<p style="max-width: 52ch; margin-top: 12px; opacity: 0.85;"> Plataforma criada em grupo como projeto de estudo, para praticar HTML, CSS e JavaScript, conectando pessoas a vagas de tecnologia.
-</p>
+			<p style="max-width: 52ch; margin-top: 12px; opacity: 0.85;">Plataforma criada em grupo como projeto de
+				estudo, para praticar HTML, CSS e JavaScript, conectando pessoas a vagas de tecnologia.</p>
 			<div class="rodape__linhas">
 				<span>© 2026 Logo/nome - Projeto de estudo</span>
 				<span><a href="contato.html">Fale conosco</a></span>
@@ -161,78 +156,101 @@
 		</div>
 	</footer>
 
+	<!-- MODAL DE CRIAÇÃO DE PERFIL -->
+	<div class="modal modal-perfil" data-modal="cadastro" style="display: none;">
+		<div class="modal__conteudo modal-perfil__conteudo">
+			<button class="modal__fechar modal-perfil__fechar" aria-label="Fechar">×</button>
 
-<!-- MODAL DE CRIAÇÃO DE PERFIL -->
-<div class="modal-perfil" style="display: none;">
-  <div class="modal-perfil__conteudo">
-    <button class="modal-perfil__fechar" aria-label="Fechar">×</button>
+			<h2>Criar Perfil de Freelancer</h2>
 
-    <h2>Criar Perfil de Freelancer</h2>
+			<form class="form-perfil" id="formPerfil">
+				<div class="form-group">
+					<label for="nome-completo">Nome Completo*</label>
+					<input type="text" id="nome-completo" name="nome-completo" placeholder="Digite seu nome completo"
+						required>
+				</div>
 
-    <form class="form-perfil" id="formPerfil">
-      <div class="form-group">
-        <label for="nome-completo">Nome Completo*</label>
-        <input type="text" id="nome-completo" name="nome-completo" placeholder="Digite seu nome completo" required>
-      </div>
+				<div class="form-group">
+					<label for="email">E-mail*</label>
+					<input type="email" id="email" name="email" placeholder="seu@email.com" required>
+				</div>
 
-      <div class="form-group">
-        <label for="email">E-mail*</label>
-        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-      </div>
+				<div class="form-group">
+					<label for="senha">Senha*</label>
+					<input type="password" id="senha" name="senha" placeholder="Crie uma senha" minlength="8" required>
+				</div>
 
-      <div class="form-group">
-        <label for="senha">Senha*</label>
-        <input type="password" id="senha" name="senha" placeholder="Crie uma senha" minlength="8" required>
-      </div>
+				<div class="form-group">
+					<label for="area-atuacao">Área de Atuação*</label>
+					<select id="area-atuacao" name="area-atuacao" required>
+						<option value="" disabled selected>Selecione sua área</option>
+						<option value="frontend">Front-end (React, Vue, Angular)</option>
+						<option value="backend">Back-end (Node.js, Python, PHP)</option>
+						<option value="fullstack">Full Stack</option>
+						<option value="mobile">Mobile (React Native, Flutter)</option>
+						<option value="design">Design (UI/UX, Gráfico)</option>
+						<option value="dados">Dados (Analista, Data Science)</option>
+						<option value="devops">DevOps/Cloud</option>
+						<option value="outro">Outra área</option>
+					</select>
+				</div>
 
-      <div class="form-group">
-        <label for="area-atuação">Área de Atuação*</label>
-        <select id="area-atuação" name="area-atuação" required>
-          <option value="" disabled selected>Selecione sua área</option>
-          <option value="frontend">Front-end (React, Vue, Angular)</option>
-          <option value="backend">Back-end (Node.js, Python, PHP)</option>
-          <option value="fullstack">Full Stack</option>
-          <option value="mobile">Mobile (React Native, Flutter)</option>
-          <option value="design">Design (UI/UX, Gráfico)</option>
-          <option value="dados">Dados (Analista, Data Science)</option>
-          <option value="devops">DevOps/Cloud</option>
-          <option value="outro">Outra área</option>
-        </select>
-      </div>
+				<div class="form-group">
+					<label for="nivel">Nível de Experiência*</label>
+					<select id="nivel" name="nivel" required>
+						<option value="" disabled selected>Selecione seu nível</option>
+						<option value="iniciante">Iniciante (0-1 ano)</option>
+						<option value="intermediario">Intermediário (1-3 anos)</option>
+						<option value="avancado">Avançado (3+ anos)</option>
+						<option value="especialista">Especialista</option>
+					</select>
+				</div>
 
-      <div class="form-group">
-        <label for="nivel">Nível de Experiência*</label>
-        <select id="nivel" name="nivel" required>
-          <option value="" disabled selected>Selecione seu nível</option>
-          <option value="iniciante">Iniciante (0-1 ano)</option>
-          <option value="intermediario">Intermediário (1-3 anos)</option>
-          <option value="avancado">Avançado (3+ anos)</option>
-          <option value="especialista">Especialista</option>
-        </select>
-      </div>
+				<div class="form-group">
+					<label for="bio">Sobre você (máx. 200 caracteres)</label>
+					<textarea id="bio" name="bio" maxlength="200"
+						placeholder="Breve descrição sobre você, habilidades e experiências"></textarea>
+				</div>
 
-      <div class="form-group">
-        <label for="bio">Sobre você (máx. 200 caracteres)</label>
-        <textarea id="bio" name="bio" maxlength="200" placeholder="Breve descrição sobre você, habilidades e experiências"></textarea>
-      </div>
+				<div class="form-group">
+					<label for="portfolio">Link do Portfólio/GitHub (opcional)</label>
+					<input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/seu-usuario">
+				</div>
 
-      <div class="form-group">
-        <label for="portfolio">Link do Portfólio/GitHub (opcional)</label>
-        <input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/seu-usuario">
-      </div>
+				<div class="form-group">
+					<label>
+						<input type="checkbox" id="newsletter" name="newsletter" checked>
+						Receber novidades por e-mail
+					</label>
+				</div>
 
-      <div class="form-group">
-        <label>
-          <input type="checkbox" id="newsletter" name="newsletter" checked>
-          Receber novidades por e-mail
-        </label>
-      </div>
+				<button type="submit" class="botao botao--primario" style="width: 100%;">Criar Perfil</button>
+			</form>
+		</div>
+	</div>
 
-      <button type="submit" class="botao botao--primario" style="width: 100%;">Criar Perfil</button>
-    </form>
-  </div>
-</div>
+	<!-- MODAL DE LOGIN -->
+	<div class="modal modal-login" data-modal="login" style="display: none;">
+		<div class="modal__conteudo modal-login__conteudo">
+			<button class="modal__fechar modal-login__fechar" aria-label="Fechar">×</button>
 
+			<h2>Entrar na sua conta</h2>
+
+			<form class="form-login" id="formLogin">
+				<div class="form-group">
+					<label for="login-email">E-mail*</label>
+					<input type="email" id="login-email" name="login-email" placeholder="seu@email.com" required>
+				</div>
+
+				<div class="form-group">
+					<label for="login-senha">Senha*</label>
+					<input type="password" id="login-senha" name="login-senha" placeholder="Sua senha" required>
+				</div>
+
+				<button type="submit" class="botao botao--primario" style="width: 100%;">Entrar</button>
+			</form>
+		</div>
+	</div>
 
 </body>
 

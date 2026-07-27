@@ -2,3 +2,70 @@ Criar modais para preencher informações do curriculo, assim teremos vários mo
 
 No JS teremos quer colocar o display: flex ou none...
 
+CONCEITOS UTILIZADOS PARA FAZER O CSS:
+
+1. Variáveis (:root + var())
+
+Cores, fontes e tamanhos nomeados por função (--ink, --paper, --mustard...) declarados uma vez, usados em todo o arquivo com var(--nome). Muda um valor, muda o site inteiro.
+
+
+2. Seletores (as "formas de apontar" pra um elemento)
+Tag (h1, p, img) — afeta tudo daquele tipo.
+
+Classe (.botao, .cartao) — afeta só quem tem aquela classe.
+
+Descendente (.nav-principal a) — "a dentro de nav".
+
+Composto (a.atual) — "o mesmo elemento sendo as duas coisas".
+
+:not() (.secao:not(.secao--alt)) — "seção que NÃO tem essa outra classe". Usado repetidamente pra diferenciar a seção clara da escura sem duplicar tudo.
+
+::before (.grade-3::before) — cria um elemento "fantasma" só com CSS, sem precisar de uma tag nova no HTML (usado pra desenhar a linha tracejada da trilha).
+
+
+3. Box model e dimensões
+box-sizing: border-box — padding/border contados dentro da largura.
+
+padding — respiro interno (usado em quase tudo: botões, cards, container).
+
+%, rem, vh/vw, clamp() — as unidades, cada uma relativa a uma coisa diferente (pai, fonte-base, tela, ou um intervalo fluido entre duas).
+
+
+4. Layout (como os elementos se organizam)
+display: flex — repetido várias vezes (cabeçalho, nav, botões, modal) pra alinhar itens numa linha/coluna, com gap, align-items, justify-content.
+
+display: grid — usado nos cards (.grade-3, .grade-vagas) pra criar colunas (grid-template-columns: repeat(N, 1fr)).
+
+margin: 0 auto — centraliza um elemento com largura limitada (.container).
+
+
+5. Posicionamento fora do fluxo normal
+position: sticky — cabeçalho grudando no topo.
+
+position: fixed + inset: 0 — modal cobrindo a tela inteira.
+
+position: absolute (dentro de algo relative) — o botão "×" no canto do modal, a linha ::before da trilha.
+
+z-index — decide quem fica na frente quando elementos se sobrepõem (cabeçalho: 30, modal: 50).
+
+
+6. Estados e transições
+:hover — feedback ao passar o mouse (botões, cards, links).
+
+:focus — feedback ao clicar/tabular num campo.
+
+transition — suaviza a troca entre esses estados (sempre declarado no estado normal, não no hover).
+
+transform (rotate, translateY) — usado tanto pra efeitos discretos (card "subindo" no hover) quanto decorativos (cards do hero levemente inclinados).
+
+
+7. Herança e valores especiais
+inherit — força puxar do elemento pai (usado em a, .botao--fantasma).
+
+currentColor — copia a cor de texto do próprio elemento pra outra propriedade (borda seguindo a cor do texto).
+
+transparent — cor "neutra", reserva espaço sem mostrar nada.
+
+
+8. Responsividade
+@media (max-width: Npx) — repetido em duas larguras (960px, 720px) pra ir simplificando o layout conforme a tela encolhe (3 colunas → 2 → 1, nav vira hambúrguer).

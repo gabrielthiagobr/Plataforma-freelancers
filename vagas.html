@@ -1,199 +1,87 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Vagas de Tecnologia</title>
-
-    <link rel="stylesheet" href="css/styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vagas de tecnologia | Plataforma de vagas na área de tecnologia</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/main.js" defer></script>
 </head>
 
-
 <body>
-
-
-<header>
-
-    <h1>Vagas de Tecnologia</h1>
-
-</header>
-
-
-
-<section class="vagas">
-
-
-    <h2>Vagas disponíveis</h2>
-
-
-
-    <div class="vaga">
-
-
-        <h3>Desenvolvedor Front-end Júnior</h3>
-
-
-        <p>
-            Empresa: NovaTech
-        </p>
-
-
-        <p>
-            Local: Remoto
-        </p>
-
-
-        <p>
-            Salário: R$ 3.500
-        </p>
-
-
-        <p>
-            Requisitos:
-            HTML, CSS e JavaScript
-        </p>
-
- <a href="candidatura.html" class="botao">
-            Candidatar-se
-        </a>
-
-
-    </div>
-
-
-
-
-
-    <div class="vaga">
-
-
-        <h3>Desenvolvedor Back-end Júnior</h3>
-
-
-        <p>
-            Empresa: Connect Systems
-        </p>
-
-
-        <p>
-            Local: São Paulo - SP
-        </p>
-
-
-        <p>
-            Salário: R$ 4.500
-        </p>
-
-
-        <p>
-            Requisitos:
-            Java, Banco de Dados e APIs
-        </p>
-
-
-        <a href="candidatura.html" class="botao">
-            Candidatar-se
-        </a>
-
-
-
-    </div>
-
-
-
-
-
-    <div class="vaga">
-
-
-        <h3>Auxiliar de Suporte em TI</h3>
-
-
-        <p>
-            Empresa: Alpha Tecnologia
-        </p>
-
-
-        <p>
-            Local: Botucatu - SP
-        </p>
-
-
-        <p>
-            Salário: R$ 2.300
-        </p>
-
-
-        <p>
-            Requisitos:
-            Windows, Office e atendimento
-        </p>
-
-
-        <a href="candidatura.html" class="botao">
-            Candidatar-se
-        </a>
-
-
-    </div>
-
-
-
-
-
-    <div class="vaga">
-
-
-        <h3>Auxiliar Técnico de Informática</h3>
-
-
-        <p>
-            Empresa: Vision Informática
-        </p>
-
-
-        <p>
-            Local: Bauru - SP
-        </p>
-
-
-        <p>
-            Salário: R$ 2.500
-        </p>
-
-
-        <p>
-            Requisitos:
-            Manutenção de computadores e redes
-        </p>
-
-
-        <a href="candidatura.html" class="botao">
-            Candidatar-se
-        </a>
-
-    </div>
-
-
-
-</section>
-
-
-
-
-<footer>
-
-    <p>
-        © 2026 DevJobs - Projeto de estudo!
-    </p>
-
-</footer>
-
-
-
+	<header class="cabecalho">
+		<div class="container">
+			<a href="index.html" class="logo">Colocar LOGO</a>
+			<nav class="nav-principal">
+				<a href="index.html">Home</a>
+				<a href="vagas.html" class="atual">Vagas</a>
+				<a href="candidatura.html">Candidatar-se</a>
+				<a href="contato.html">Fale conosco</a>
+			</nav>
+			<div class="acoes-cabecalho">
+				<a href="#" class="botao botao--fantasma" data-abrir-modal="login">Entrar</a>
+				<a href="#" class="botao botao--primario" data-abrir-modal="cadastro">Criar conta</a>
+				<button class="botao-menu">☰</button>
+			</div>
+		</div>
+	</header>
+
+	<section class="secao">
+		<div class="container">
+			<div class="secao__cabecalho">
+				<span class="hero__eyebrow">Vagas disponíveis</span>
+				<h1>Encontre a vaga certa pra você</h1>
+				<p>Todas as vagas reais, com salário, local e requisitos claros — sem letras miúdas.</p>
+			</div>
+
+			<div class="grade-vagas">
+				<div class="cartao">
+					<h3>Desenvolvedor Front-end Júnior</h3>
+					<p><strong>NovaTech</strong> · Remoto</p>
+					<p>R$ 3.500 / mês</p>
+					<p>Requisitos: HTML, CSS e JavaScript</p>
+					<a href="candidatura.html" class="botao botao--primario">Candidatar-se</a>
+				</div>
+
+				<div class="cartao">
+					<h3>Desenvolvedor Back-end Júnior</h3>
+					<p><strong>Connect Systems</strong> · São Paulo - SP</p>
+					<p>R$ 4.500 / mês</p>
+					<p>Requisitos: Java, Banco de Dados e APIs</p>
+					<a href="candidatura.html" class="botao botao--primario">Candidatar-se</a>
+				</div>
+
+				<div class="cartao">
+					<h3>Auxiliar de Suporte em TI</h3>
+					<p><strong>Alpha Tecnologia</strong> · Botucatu - SP</p>
+					<p>R$ 2.300 / mês</p>
+					<p>Requisitos: Windows, Office e atendimento</p>
+					<a href="candidatura.html" class="botao botao--primario">Candidatar-se</a>
+				</div>
+
+				<div class="cartao">
+					<h3>Auxiliar Técnico de Informática</h3>
+					<p><strong>Vision Informática</strong> · Bauru - SP</p>
+					<p>R$ 2.500 / mês</p>
+					<p>Requisitos: Manutenção de computadores e redes</p>
+					<a href="candidatura.html" class="botao botao--primario">Candidatar-se</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="rodape">
+		<div class="container">
+			<a href="index.html" class="logo">Colocar LOGO</a>
+			<p style="max-width: 52ch; margin-top: 12px; opacity: 0.85;">Plataforma criada em grupo como projeto de
+				estudo, para praticar HTML, CSS e JavaScript, conectando pessoas a vagas de tecnologia.</p>
+			<div class="rodape__linhas">
+				<span>© 2026 Logo/nome - Projeto de estudo</span>
+				<span><a href="contato.html">Fale conosco</a></span>
+			</div>
+		</div>
+	</footer>
 </body>
 
 </html>
