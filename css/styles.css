@@ -544,3 +544,30 @@ button:focus-visible{
   }
   html{ scroll-behavior: auto; }
 }
+/* Filtros de vagas (pagina vagas.html) */
+.filtros-vagas{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 32px;
+}
+.filtro-vaga{
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line-on-paper);
+  background: var(--paper-card);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filtro-vaga:hover{
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.filtro-vaga--ativo{
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}

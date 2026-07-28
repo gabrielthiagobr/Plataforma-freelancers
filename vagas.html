@@ -8,6 +8,7 @@
 	<title>Vagas de tecnologia | Plataforma de vagas na área de tecnologia</title>
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="js/main.js" defer></script>
+	<script src="js/vagas.js" defer></script>
 </head>
 
 <body>
@@ -133,38 +134,16 @@
 				</div>
 			</div>
 
-			<div class="grade-vagas">
-				<article class="cartao">
-					<h3>Desenvolvedor Front-end Júnior</h3>
-					<p><strong>NovaTech</strong> · Remoto</p>
-					<p>R$ 3.500 / mês</p>
-					<p>Requisitos: HTML, CSS e JavaScript</p>
-					<a href="candidatura.html" class="botao botao--primario">Candidatar-se</a>
-				</article>
+			<div class="filtros-vagas">
+				<button class="filtro-vaga filtro-vaga--ativo" data-filtro="todos">Todas</button>
+				<button class="filtro-vaga" data-filtro="frontend">Front-end</button>
+				<button class="filtro-vaga" data-filtro="backend">Back-end</button>
+				<button class="filtro-vaga" data-filtro="fullstack">Full Stack</button>
+				<button class="filtro-vaga" data-filtro="tecnico">Técnico em Informática</button>
+			</div>
 
-				<article class="cartao">
-					<h3>Desenvolvedor Back-end Júnior</h3>
-					<p><strong>Connect Systems</strong> · São Paulo - SP</p>
-					<p>R$ 4.500 / mês</p>
-					<p>Requisitos: Java, Banco de Dados e APIs</p>
-					<a href="candidatura.html" class="botao botao--primario">Candidatar-se</a>
-				</article>
-
-				<article class="cartao">
-					<h3>Auxiliar de Suporte em TI</h3>
-					<p><strong>Alpha Tecnologia</strong> · Botucatu - SP</p>
-					<p>R$ 2.300 / mês</p>
-					<p>Requisitos: Windows, Office e atendimento</p>
-					<a href="candidatura.html" class="botao botao--primario">Candidatar-se</a>
-				</article>
-
-				<article class="cartao">
-					<h3>Auxiliar Técnico de Informática</h3>
-					<p><strong>Vision Informática</strong> · Bauru - SP</p>
-					<p>R$ 2.500 / mês</p>
-					<p>Requisitos: Manutenção de computadores e redes</p>
-					<a href="candidatura.html" class="botao botao--primario">Candidatar-se</a>
-				</article>
+			<div class="grade-vagas" id="grade-vagas">
+				<!-- Os cards de vaga são gerados pelo js/vagas.js a partir da lista "vagas" -->
 			</div>
 		</div>
 	</section>
