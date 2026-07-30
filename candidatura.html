@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Candidate-se a vagas de tecnologia enviando seu currículo ou preenchendo o formulário de candidatura.">
+	<title>Candidatar-se | Plataforma de vagas na área de tecnologia</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/main.js" defer></script>
+	<script src="js/candidatura.js" defer></script>
+</head>
+
+<body>
+	<header class="cabecalho">
+		<div class="container">
+			<a href="index.html" class="logo">Colocar LOGO</a>
+			<nav class="nav-principal">
+				<a href="index.html">Home</a>
+				<a href="vagas.html">Vagas</a>
+				<a href="candidatura.html" class="atual">Candidatar-se</a>
+				<a href="contato.html">Fale conosco</a>
+			</nav>
+			<div class="acoes-cabecalho">
+				<a href="#" class="botao botao--fantasma" data-abrir-modal="login">Entrar</a>
+				<a href="#" class="botao botao--primario" data-abrir-modal="cadastro">Criar conta</a>
+				<button class="botao-menu" aria-label="Abrir menu">☰</button>
+			</div>
+		</div>
+	</header>
+
+	<section class="secao">
+		<div class="container">
+			<div class="secao__cabecalho">
+				<span class="hero__eyebrow">Candidatura</span>
+				<h1>Candidate-se para a vaga</h1>
+				<h3>Preencha o formulário abaixo ou envie seu currículo em anexo. A empresa entrará em contato por
+					e-mail.</p>
+			</div>
+
+					</ul>
+					<a href="vagas.html" class="botao botao--fantasma" style="width: 100%; text-align: center;">Escolher Vaga</a>
+				</aside>
+
+				<!-- Formulário de candidatura -->
+				<form class="form-candidatura cartao" id="formCandidatura" novalidate>
+					<div class="form-group">
+						<label for="nome-completo">Nome Completo*</label>
+						<input type="text" id="nome-completo" name="nome-completo"
+							placeholder="Digite seu nome completo" required>
+					</div>
+
+					<div class="form-group">
+						<label for="email">E-mail*</label>
+						<input type="email" id="email" name="email" placeholder="seu@email.com" required>
+					</div>
+
+					<div class="form-group">
+						<label for="telefone">Telefone / WhatsApp*</label>
+						<input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+					</div>
+
+					<div class="form-group">
+						<label for="portfolio">Link do Portfólio/GitHub (opcional)</label>
+						<input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/seu-usuario">
+					</div>
+
+					<div class="form-group">
+						<label for="curriculo">Currículo (PDF)*</label>
+						<input type="file" id="curriculo" name="curriculo" accept=".pdf" required>
+					</div>
+
+					<div class="form-group">
+						<label for="mensagem">Sobre Você (opcional)</label>
+						<textarea id="mensagem" name="mensagem" maxlength="500"
+							placeholder="Conte um pouco sobre sua experiência e por que você é uma boa escolha para esta vaga"></textarea>
+					</div>
+
+					<div class="form-group">
+						<label>
+							<input type="checkbox" id="termos" name="termos" required>
+							Concordo com o uso dos meus dados para fins de recrutamento nesta vaga*
+						</label>
+					</div>
+
+					<button type="submit" class="botao botao--primario" style="width: 100%;">Enviar
+						candidatura</button>
+
+					<p class="mensagem-sucesso" id="mensagemSucesso" style="display:none;">Candidatura enviada com
+						sucesso! A empresa entrará em contato por e-mail.</p>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<footer class="rodape">
+		<div class="container">
+			<a href="index.html" class="logo">Colocar LOGO</a>
+			<p style="max-width: 52ch; margin-top: 12px; opacity: 0.85;">Plataforma criada em grupo como projeto de
+				estudo, para praticar HTML, CSS e JavaScript, conectando pessoas a vagas de tecnologia.</p>
+			<div class="rodape__linhas">
+				<span>© 2026 Logo/nome - Projeto de estudo</span>
+				<span><a href="contato.html">Fale conosco</a></span>
+			</div>
+		</div>
+	</footer>
+
+	<!-- MODAL DE CRIAÇÃO DE PERFIL -->
+	<div class="modal modal-perfil" data-modal="cadastro" style="display: none;">
+		<div class="modal__conteudo modal-perfil__conteudo">
+			<button class="modal__fechar modal-perfil__fechar" aria-label="Fechar">×</button>
+
+			<h2>Criar Perfil de Freelancer</h2>
+
+			<form class="form-perfil" id="formPerfil">
+				<div class="form-group">
+					<label for="perfil-nome-completo">Nome Completo*</label>
+					<input type="text" id="perfil-nome-completo" name="nome-completo"
+						placeholder="Digite seu nome completo" required>
+				</div>
+
+				<div class="form-group">
+					<label for="perfil-email">E-mail*</label>
+					<input type="email" id="perfil-email" name="email" placeholder="seu@email.com" required>
+				</div>
+
+				<div class="form-group">
+					<label for="perfil-senha">Senha*</label>
+					<input type="password" id="perfil-senha" name="senha" placeholder="Crie uma senha" minlength="8"
+						required>
+				</div>
+
+				<div class="form-group">
+					<label for="perfil-area-atuacao">Área de Atuação*</label>
+					<select id="perfil-area-atuacao" name="area-atuacao" required>
+						<option value="" disabled selected>Selecione sua área</option>
+						<option value="frontend">Front-end (React, Vue, Angular)</option>
+						<option value="backend">Back-end (Node.js, Python, PHP)</option>
+						<option value="fullstack">Full Stack</option>
+						<option value="mobile">Mobile (React Native, Flutter)</option>
+						<option value="design">Design (UI/UX, Gráfico)</option>
+						<option value="dados">Dados (Analista, Data Science)</option>
+						<option value="devops">DevOps/Cloud</option>
+						<option value="outro">Outra área</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="perfil-nivel">Nível de Experiência*</label>
+					<select id="perfil-nivel" name="nivel" required>
+						<option value="" disabled selected>Selecione seu nível</option>
+						<option value="iniciante">Iniciante (0-1 ano)</option>
+						<option value="intermediario">Intermediário (1-3 anos)</option>
+						<option value="avancado">Avançado (3+ anos)</option>
+						<option value="especialista">Especialista</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="perfil-bio">Sobre você (máx. 200 caracteres)</label>
+					<textarea id="perfil-bio" name="bio" maxlength="200"
+						placeholder="Breve descrição sobre você, habilidades e experiências"></textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="perfil-portfolio">Link do Portfólio/GitHub (opcional)</label>
+					<input type="url" id="perfil-portfolio" name="portfolio"
+						placeholder="https://github.com/seu-usuario">
+				</div>
+
+				<div class="form-group">
+					<label>
+						<input type="checkbox" id="newsletter" name="newsletter" checked>
+						Receber novidades por e-mail
+					</label>
+				</div>
+
+				<button type="submit" class="botao botao--primario" style="width: 100%;">Criar Perfil</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- MODAL DE LOGIN -->
+	<div class="modal modal-login" data-modal="login" style="display: none;">
+		<div class="modal__conteudo modal-login__conteudo">
+			<button class="modal__fechar modal-login__fechar" aria-label="Fechar">×</button>
+
+			<h2>Entrar na sua conta</h2>
+
+			<form class="form-login" id="formLogin">
+				<div class="form-group">
+					<label for="login-email">E-mail*</label>
+					<input type="email" id="login-email" name="login-email" placeholder="seu@email.com" required>
+				</div>
+
+				<div class="form-group">
+					<label for="login-senha">Senha*</label>
+					<input type="password" id="login-senha" name="login-senha" placeholder="Sua senha" required>
+				</div>
+
+				<button type="submit" class="botao botao--primario" style="width: 100%;">Entrar</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>
