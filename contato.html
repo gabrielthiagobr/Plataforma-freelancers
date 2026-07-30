@@ -27,30 +27,53 @@
 
     <section class="secao">
         <div class="container">
-            <div class="secao__cabecalho">
+            <span class="eyebrow">Fale conosco</span>
                 <h1>Fale conosco</h1>
                 <p>Tem alguma dúvida, sugestão ou quer entrar em contato com a nossa equipe? Preencha o formulário abaixo.</p>
-            </div>
-
-            <!--
-                Cada campo agora está envolvido por ".form-group" — é essa classe
-                que o styles.css usa pra estilizar labels, inputs, select e textarea
-                (espaçamento, borda, radius, estado de foco). Sem essa div, o CSS
-                não teria como "encontrar" esses elementos e o formulário apareceria
-                sem nenhum estilo.
-            -->
-            <form>
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" required>
+                <div class="contato-grade">
+                    <div class="contato-info">
+                        <div class="cartao">
+                            <h3>E-mail</h3>
+                            <p>
+                                contato.vagaplus.com.br
+                                <br>
+                                Respondemos em até 2 dias úteis.
+                            </p>
+                        </div>
+                        <div class="cartao">
+                            <h3>Telefone</h3>
+                            <p>
+                                (00) 00000-0000
+                                <br>
+                                Segunda a sexta, das 9h as 18h.
+                            </p>
+                        </div>
+                        <div class="cartao">
+                            <h3>Dúvidas frequentes:</h3>
+                            <p>
+                                Como me candidato a uma vaga? Como edito meu cadastro? Veja as respostas mais comuns ao enviar sua mensagem.
+                            </p>
+                        </div>
+                        <div class="cartao">
+                            <h3 style="margin-bottom: 6px;">Envie sua mensagem.</h3>
+                            <p style="margin-bottom:20px;">Preencha o formulário e retornaremos o quanto antes.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+            <form id="formContato">
+                <div class="formulário-grade">
+                    <div class="campo-largo">
+                    <label for="contatoNome">Nome Completo</label>
+                    <input type="text" id="contatoNome" required placeholder="Seu nome">
+                </div>
+                </div>
+                <div class="campo"> 
+                    <label for="contatoEmail">E-mail</label>
+                    <input type="email" id="contatoEmail" required placeholder="seuemail@exemplo.com">
                 </div>
 
-                <div class="form-group">
+                <div class="campo">
                     <label for="assunto">Assunto</label>
                     <select id="assunto" name="assunto">
                         <option value="duvida">Dúvida</option>
@@ -60,9 +83,10 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="mensagem">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                <div class="campo-largo">
+                    <label for="contatoMensagem">Mensagem</label>
+                    <textarea id="contatoMensagem" rows="5" required placeholder="Escreva sua mensagem aqui">
+                    </textarea>
                 </div>
 
                 <button type="submit" class="botao botao--primario" style="width: 100%;">Enviar mensagem</button>
