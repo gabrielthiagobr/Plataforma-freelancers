@@ -571,3 +571,39 @@ button:focus-visible{
   color: var(--paper);
   border-color: var(--ink);
 }
+
+.contato-grade{
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 28px;
+  align-items: start;
+  margin: 40px 0 60px;
+}
+
+.form-linha{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.contato-info{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contato-info .cartao__icone{
+  background: rgba(61, 90, 254, 0.1); /* fundo suave usando o cobalt */
+  color: var(--cobalt);
+  border: none;
+  transform: none;
+}
+
+.contato-form-cartao{
+  padding: 36px 32px;
+}
+.contato-form-cartao h3{ margin-bottom: 6px; }
+.contato-form-cartao > p{ margin-bottom: 24px; color: var(--ink-soft); }
+
+@media (max-width: 600px){
+  .form-linha{ grid-template-columns: 1fr; }
+}
