@@ -122,12 +122,17 @@ p{ margin: 0 0 12px; }
   padding-bottom: 18px;
 }
 
-.logo{
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--ink);
+.logo {
+  display: flex;
+  align-items: center;
+  /* Removemos o height: 150px que estava estourando a barra */
+}
+
+/* Se a sua logo for uma imagem <img> dentro da div .logo */
+.logo img {
+  max-height: 100px; /* Ajuste aqui a altura desejada (ex: entre 40px e 55px) */
+  width: auto;      /* Mantém a proporção sem distorcer */
+  object-fit: contain;
 }
 
 .nav-principal{ display: flex; gap: 32px; align-items: center; }
