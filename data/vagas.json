@@ -37,9 +37,9 @@
   },
   {
     "id": 5,
-    "titulo": "Desenvolvedor Full Stack Pleno",
+    "titulo": "Desenvolvedor Full Stack Senior",
     "empresa": "Orbita Software",
-    "local": "Remoto",
+    "local": "Híbrido - Botucatu - SP",
     "salario": "R$ 6.000 / mês",
     "requisitos": "React, Node.js e PostgreSQL",
     "categoria": "fullstack"
@@ -48,36 +48,36 @@
     "id": 6,
     "titulo": "Desenvolvedor Full Stack Pleno",
     "empresa": "Software orbital",
-    "local": "Remoto",
+    "local": "Híbrido - Curitiba - PR",
     "salario": "R$ 5.000 / mês",
     "requisitos": "React, Node.js e PostgreSQL",
     "categoria": "fullstack"
   },
   {
     "id": 7,
-    "titulo": "Desenvolvedor Full Stack Pleno",
+    "titulo": "Desenvolvedor Full Stack Junior",
     "empresa": "Orbit Softwares",
     "local": "Remoto",
-    "salario": "R$ 3.700 / mês",
-    "requisitos": "React, Node.js e PostgreSQL",
+    "salario": "R$ 3.600 / mês",
+    "requisitos": "Angular, Python e MongoDB",
     "categoria": "fullstack"
   },
   {
     "id": 8,
     "titulo": "Desenvolvedor Full Stack Pleno",
     "empresa": "Software orbital",
-    "local": "Remoto",
-    "salario": "R$ 4.000 / mês",
+    "local": "Presencial",
+    "salario": "R$ 4.500 / mês",
     "requisitos": "React, Node.js e PostgreSQL",
     "categoria": "fullstack"
   },
   {
     "id": 9,
-    "titulo": "Desenvolvedor Front-end Pleno",
+    "titulo": "Desenvolvedor Front-end Pleano",
     "empresa": "Tech Nova",
     "local": "São Paulo - SP",
     "salario": "R$ 5.000 / mês",
-    "requisitos": "React, TypeScript, Tailwind CSS e Git",
+    "requisitos": "React, TypeScript, Tailwind CSS ",
     "categoria": "frontend"
   },
   {
@@ -113,7 +113,7 @@
     "empresa": "DataWave",
     "local": "Remoto",
     "salario": "R$ 8.000 / mês",
-    "requisitos": "Python e Apache Spark",
+    "requisitos": "Python, Apache Spark e Azure Synapse Analytics",
     "categoria": "backend"
   },
   {
