@@ -262,6 +262,11 @@ p{
   border-bottom: 1px solid var(--line-on-paper);
 
   backdrop-filter: blur(10px);
+  transition: transform 0.3s ease; 
+}
+
+.cabecalho--escondido{
+  transform: translateY(-100%);
 }
 
 .cabecalho .container{
@@ -728,7 +733,7 @@ p{
 .secao--alt h3,
 .secao--escura h2,
 .secao--escura h3{
-  color: var(--paper);
+  color: var(--mustard);
 }
 
 .secao--alt p,

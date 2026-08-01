@@ -1,3 +1,32 @@
+// ===== Header inteligente: esconde ao rolar pra baixo, mostra ao rolar pra cima =====
+(() => {
+  const header = document.querySelector('.cabecalho');
+  if (!header) return;
+
+  let ultimoScroll = window.scrollY;
+  const TOLERANCIA = 8; // ignora tremores pequenos de scroll (trackpad, etc.)
+
+  window.addEventListener('scroll', () => {
+    const scrollAtual = window.scrollY;
+    const diferenca = scrollAtual - ultimoScroll;
+
+    // Perto do topo, header sempre visível
+    if (scrollAtual < 80) {
+      header.classList.remove('cabecalho--escondido');
+    }
+    // Rolando pra baixo além da tolerância -> esconde
+    else if (diferenca > TOLERANCIA) {
+      header.classList.add('cabecalho--escondido');
+    }
+    // Rolando pra cima além da tolerância -> mostra
+    else if (diferenca < -TOLERANCIA) {
+      header.classList.remove('cabecalho--escondido');
+    }
+
+    ultimoScroll = scrollAtual;
+  }, { passive: true });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // ===== Sistema genérico de modais =====
@@ -97,3 +126,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
