@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+    <title>Fale conosco - Plataforma de divulgação de vagas de emprego</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <a href="index.html" class="logo"><img src="assets/logo.png" alt="Logo"></a>
+            <nav class="nav-principal">
+                <a href="index.html">Home</a>
+                <a href="vagas.html">Vagas</a>
+                <a href="candidatura.html">Candidatar-se</a>
+                <a href="contato.html" class="atual">Fale Conosco</a>
+            </nav>
+            <div class="acoes-cabecalho">
+                <a href="#" class="botao botao--fantasma" data-abrir-modal="login">Entrar</a>
+                <a href="#" class="botao botao--primario" data-abrir-modal="cadastro">Criar conta</a>
+                <button class="botao-menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="secao">
+        <div class="container">
+            <span class="hero__eyebrow">Fale conosco</span>
+            <h1>Fale conosco</h1>
+            <p>Tem alguma dúvida, sugestão ou quer entrar em contato com a nossa equipe? Preencha o formulário abaixo.</p>
+
+            <div class="contato-grade">
+                <div class="contato-info">
+                    <div class="cartao">
+                        <div class="cartao__icone">✉️</div>
+                        <h3>E-mail</h3>
+                        <p>
+                            contato@vagaplus.com.br
+                            <br>
+                            Respondemos em até 2 dias úteis.
+                        </p>
+                    </div>
+
+                    <div class="cartao">
+                        <div class="cartao__icone">📞</div>
+                        <h3>Telefone</h3>
+                        <p>
+                            (00) 00000-0000
+                            <br>
+                            Segunda a sexta, das 9h as 18h.
+                        </p>
+                    </div>
+
+                    <div class="cartao">
+                        <div class="cartao__icone">?</div>
+                        <h3>Dúvidas frequentes</h3>
+                        <p>
+                            Como me candidato a uma vaga? Como edito meu cadastro? Veja as respostas mais comuns ao enviar sua mensagem.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cartao contato-form-cartao">
+                    <h3>Envie sua mensagem</h3>
+                    <p>Preencha o formulário e retornaremos o quanto antes.</p>
+
+                    <form id="formContato">
+                        <div class="form-group">
+                            <label for="contatoNome">Nome completo</label>
+                            <input type="text" id="contatoNome" required placeholder="Seu nome">
+                        </div>
+
+                        <div class="form-linha">
+                            <div class="form-group">
+                                <label for="contatoEmail">E-mail</label>
+                                <input type="email" id="contatoEmail" required placeholder="seuemail@exemplo.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="assunto">Assunto</label>
+                                <select id="assunto" name="assunto">
+                                    <option value="">Selecione</option>
+                                    <option value="duvida">Dúvida</option>
+                                    <option value="sugestao">Sugestão</option>
+                                    <option value="reclamacao">Reclamação</option>
+                                    <option value="parceria">Parceria</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contatoMensagem">Mensagem</label>
+                            <textarea id="contatoMensagem" rows="5" required placeholder="Escreva sua mensagem aqui"></textarea>
+                        </div>
+
+                        <button type="submit" class="botao botao--primario" style="width: 100%;">Enviar mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="rodape">
+        <div class="container">
+            <p style="max-width: 52ch; margin-top: 12px; opacity: 0.85;"> Plataforma criada em grupo como projeto de estudo para praticar HTML, CSS e JavaScript. Conectando pessoas a vagas de tecnologia.</p>
+            <div class="rodape__linhas">
+                <span>© 2026 Worka - Projeto de estudo</span>
+                <span><a href="contato.html">Fale conosco</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal modal-perfil" data-modal="cadastro" style="display: none;">
+		<div class="modal__conteudo modal-perfil__conteudo">
+			<button class="modal__fechar modal-perfil__fechar" aria-label="Fechar">×</button>
+
+			<h2>Criar Perfil de Freelancer</h2>
+
+			<form class="form-perfil" id="formPerfil">
+				<div class="form-group">
+					<label for="nome-completo">Nome Completo*</label>
+					<input type="text" id="nome-completo" name="nome-completo" placeholder="Digite seu nome completo"
+						required>
+				</div>
+
+				<div class="form-group">
+					<label for="email">E-mail*</label>
+					<input type="email" id="email" name="email" placeholder="seu@email.com" required>
+				</div>
+
+				<div class="form-group">
+					<label for="senha">Senha*</label>
+					<input type="password" id="senha" name="senha" placeholder="Crie uma senha" minlength="8" required>
+				</div>
+
+				<div class="form-group">
+					<label for="area-atuacao">Área de Atuação*</label>
+					<select id="area-atuacao" name="area-atuacao" required>
+						<option value="" disabled selected>Selecione sua área</option>
+						<option value="frontend">Front-end (React, Vue, Angular)</option>
+						<option value="backend">Back-end (Node.js, Python, PHP)</option>
+						<option value="fullstack">Full Stack</option>
+						<option value="mobile">Mobile (React Native, Flutter)</option>
+						<option value="design">Design (UI/UX, Gráfico)</option>
+						<option value="dados">Dados (Analista, Data Science)</option>
+						<option value="devops">DevOps/Cloud</option>
+						<option value="outro">Outra área</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="nivel">Nível de Experiência*</label>
+					<select id="nivel" name="nivel" required>
+						<option value="" disabled selected>Selecione seu nível</option>
+						<option value="iniciante">Iniciante (0-1 ano)</option>
+						<option value="intermediario">Intermediário (1-3 anos)</option>
+						<option value="avancado">Avançado (3+ anos)</option>
+						<option value="especialista">Especialista</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label for="bio">Sobre você (máx. 200 caracteres)</label>
+					<textarea id="bio" name="bio" maxlength="200"
+						placeholder="Breve descrição sobre você, habilidades e experiências"></textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="portfolio">Link do Portfólio/GitHub (opcional)</label>
+					<input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/seu-usuario">
+				</div>
+
+				<div class="form-group">
+					<label>
+						<input type="checkbox" id="newsletter" name="newsletter" checked>
+						Receber novidades por e-mail
+					</label>
+				</div>
+
+				<button type="submit" class="botao botao--primario" style="width: 100%;">Criar Perfil</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- MODAL DE LOGIN -->
+	<div class="modal modal-login" data-modal="login" style="display: none;">
+		<div class="modal__conteudo modal-login__conteudo">
+			<button class="modal__fechar modal-login__fechar" aria-label="Fechar">×</button>
+
+			<h2>Entrar na sua conta</h2>
+
+			<form class="form-login" id="formLogin">
+				<div class="form-group">
+					<label for="login-email">E-mail*</label>
+					<input type="email" id="login-email" name="login-email" placeholder="seu@email.com" required>
+				</div>
+
+				<div class="form-group">
+					<label for="login-senha">Senha*</label>
+					<input type="password" id="login-senha" name="login-senha" placeholder="Sua senha" required>
+				</div>
+
+				<button type="submit" class="botao botao--primario" style="width: 100%;">Entrar</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
