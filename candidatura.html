@@ -14,12 +14,12 @@
 <body>
 	<header class="cabecalho">
 		<div class="container">
-			<a href="index.html" class="logo"><img src="assets/logo.png" alt="Logo"></a>
+			<a href="index.html" class="logo"><img src="assets/img/worka-logo-header.png" alt="Worka"></a>
 			<nav class="nav-principal">
 				<a href="index.html">Home</a>
 				<a href="vagas.html">Vagas</a>
 				<a href="candidatura.html" class="atual">Candidatar-se</a>
-				<a href="contato.html">Fale Conosco</a>
+				<a href="contato.html">Fale conosco</a>
 			</nav>
 			<div class="acoes-cabecalho">
 				<a href="#" class="botao botao--fantasma" data-abrir-modal="login">Entrar</a>
@@ -34,16 +34,38 @@
 			<div class="secao__cabecalho">
 				<span class="hero__eyebrow">Candidatura</span>
 				<h1>Candidate-se para a vaga</h1>
-				<h3>Preencha o formulário abaixo ou envie seu currículo em anexo. A empresa entrará em contato por
+				<p>Preencha o formulário abaixo ou envie seu currículo em anexo. A empresa entrará em contato por
 					e-mail.</p>
 			</div>
 
-					</ul>
+			<div class="candidatura-layout">
+				<!-- Painel lateral com orientações sobre a candidatura -->
+				<aside class="candidatura-aside">
+					<div class="cartao">
+						<h3>Como funciona</h3>
+						<ul>
+							<li>Preencha seus dados de contato e anexe seu currículo em PDF.</li>
+							<li>Se preferir, conte um pouco sobre sua experiência no campo de mensagem.</li>
+							<li>A empresa responsável pela vaga entra em contato direto por e-mail.</li>
+						</ul>
+					</div>
 					<a href="vagas.html" class="botao botao--fantasma" style="width: 100%; text-align: center;">Escolher Vaga</a>
 				</aside>
 
 				<!-- Formulário de candidatura -->
 				<form class="form-candidatura cartao" id="formCandidatura" novalidate>
+					<div class="form-group">
+						<label for="vaga-interesse">Vaga de Interesse*</label>
+						<select id="vaga-interesse" name="vaga-interesse" required>
+							<option value="" disabled selected>Selecione a vaga</option>
+							<!-- opções preenchidas via JS a partir de data/vagas.json -->
+						</select>
+					</div>
+
+					<div class="vaga-resumo" id="vagaResumo">
+						<!-- resumo da vaga escolhida, preenchido via JS -->
+					</div>
+
 					<div class="form-group">
 						<label for="nome-completo">Nome Completo*</label>
 						<input type="text" id="nome-completo" name="nome-completo"
@@ -95,7 +117,8 @@
 
 	<footer class="rodape">
 		<div class="container">
-			<p style="max-width: 52ch; margin-top: 12px; opacity: 0.85;">Plataforma criada em grupo como projeto de estudo para praticar HTML, CSS e JavaScript. Conectando pessoas a vagas de tecnologia.</p>
+			<p style="max-width: 52ch; margin-top: 20px; opacity: 0.85;">Plataforma criada em grupo como projeto de
+				estudo, para praticar HTML, CSS e JavaScript, conectando pessoas a vagas de tecnologia.</p>
 			<div class="rodape__linhas">
 				<span>© 2026 Worka - Projeto de estudo</span>
 				<span><a href="contato.html">Fale conosco</a></span>

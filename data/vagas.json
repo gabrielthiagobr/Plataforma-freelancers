@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "titulo": "Desenvolvedor Front-end Júnior",
+    "empresa": "NovaTech",
+    "local": "Remoto",
+    "salario": "R$ 3.500 / mês",
+    "requisitos": "HTML, CSS e JavaScript",
+    "categoria": "frontend"
+  },
+  {
+    "id": 2,
+    "titulo": "Desenvolvedor Back-end Júnior",
+    "empresa": "Connect Systems",
+    "local": "São Paulo - SP",
+    "salario": "R$ 4.500 / mês",
+    "requisitos": "Java, Banco de Dados e APIs",
+    "categoria": "backend"
+  },
+  {
+    "id": 3,
+    "titulo": "Auxiliar de Suporte em TI",
+    "empresa": "Alpha Tecnologia",
+    "local": "Botucatu - SP",
+    "salario": "R$ 2.300 / mês",
+    "requisitos": "Windows, Office e atendimento",
+    "categoria": "tecnico"
+  },
+  {
+    "id": 4,
+    "titulo": "Auxiliar Técnico de Informática",
+    "empresa": "Vision Informática",
+    "local": "Bauru - SP",
+    "salario": "R$ 2.500 / mês",
+    "requisitos": "Manutenção de computadores e redes",
+    "categoria": "tecnico"
+  },
+  {
+    "id": 5,
+    "titulo": "Desenvolvedor Full Stack Pleno",
+    "empresa": "Orbita Software",
+    "local": "Remoto",
+    "salario": "R$ 6.000 / mês",
+    "requisitos": "React, Node.js e PostgreSQL",
+    "categoria": "fullstack"
+  },
+  {
+    "id": 6,
+    "titulo": "Desenvolvedor Full Stack Pleno",
+    "empresa": "Software orbital",
+    "local": "Remoto",
+    "salario": "R$ 5.000 / mês",
+    "requisitos": "React, Node.js e PostgreSQL",
+    "categoria": "fullstack"
+  },
+  {
+    "id": 7,
+    "titulo": "Desenvolvedor Full Stack Pleno",
+    "empresa": "Orbit Softwares",
+    "local": "Remoto",
+    "salario": "R$ 3.700 / mês",
+    "requisitos": "React, Node.js e PostgreSQL",
+    "categoria": "fullstack"
+  },
+  {
+    "id": 8,
+    "titulo": "Desenvolvedor Full Stack Pleno",
+    "empresa": "Software orbital",
+    "local": "Remoto",
+    "salario": "R$ 4.000 / mês",
+    "requisitos": "React, Node.js e PostgreSQL",
+    "categoria": "fullstack"
+  },
+  {
+    "id": 9,
+    "titulo": "Desenvolvedor Front-end Pleno",
+    "empresa": "Tech Nova",
+    "local": "São Paulo - SP",
+    "salario": "R$ 5.000 / mês",
+    "requisitos": "React, TypeScript, Tailwind CSS e Git",
+    "categoria": "frontend"
+  },
+  {
+    "id": 10,
+    "titulo": "Desenvolvedor Back-end Sênior",
+    "empresa": "Connect Systems",
+    "local": "Remoto",
+    "salario": "R$ 9.500 / mês",
+    "requisitos": "Node.js, Docker, AWS e PostgreSQL",
+    "categoria": "backend"
+  },
+  {
+    "id": 11,
+    "titulo": "Analista de Suporte Técnico",
+    "empresa": "Alpha Tecnologia",
+    "local": "Bauru - SP",
+    "salario": "R$ 2.800 / mês",
+    "requisitos": "Redes, Windows Server, Hardware e Suporte",
+    "categoria": "tecnico"
+  },
+  {
+    "id": 12,
+    "titulo": "Engenheiro de Dados Pleno",
+    "empresa": "DataWave",
+    "local": "Bauru - SP",
+    "salario": "R$ 9.000 / mês",
+    "requisitos": "Python, SQL, Apache Spark e ETL",
+    "categoria": "backend"
+  },
+  {
+    "id": 13,
+    "titulo": "Engenheiro de Dados Pleno",
+    "empresa": "DataWave",
+    "local": "Remoto",
+    "salario": "R$ 8.000 / mês",
+    "requisitos": "Python e Apache Spark",
+    "categoria": "backend"
+  },
+  {
+    "id": 14,
+    "titulo": "Desenvolvedor Front-end Pleno",
+    "empresa": "NovaTech",
+    "local": "Jaú - SP",
+    "salario": "R$ 5.000 / mês",
+    "requisitos": "React, TypeScript e Tailwind CSS",
+    "categoria": "frontend"
+  },
+  {
+    "id": 15,
+    "titulo": "Desenvolvedor Front-end Sênior",
+    "empresa": "NovaTech",
+    "local": "Marília - SP",
+    "salario": "R$ 6.000 / mês",
+    "requisitos": "TypeScript, Tailwind CSS e Git",
+    "categoria": "frontend"
+  },
+  {
+    "id": 16,
+    "titulo": "Técnico em Digitação",
+    "empresa": "NovaTech",
+    "local": "Jaú - SP",
+    "salario": "R$ 4.500 / mês",
+    "requisitos": "React, TypeScript, Tailwind CSS e Git",
+    "categoria": "tecnico"
+  }
+]
