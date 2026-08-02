@@ -1096,7 +1096,7 @@ p{
    CANDIDATURA
 ========================================================== */
 
-.candidatura-grade{
+.candidatura-layout{
   width: 100%;
 
   display: grid;
@@ -1108,18 +1108,13 @@ p{
   align-items: start;
 }
 
-.candidatura-resumo{
+.candidatura-aside{
   position: sticky;
   top: calc(var(--header-height) + 25px);
+}
 
-  padding: 28px;
-
-  border: 1px solid var(--line-on-paper);
-  border-radius: var(--radius);
-
-  background: var(--paper-card);
-
-  box-shadow: var(--shadow-sm);
+.candidatura-aside .cartao{
+  margin-bottom: 18px;
 }
 
 /*
@@ -1149,6 +1144,45 @@ p{
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.65;
+}
+
+.vaga-resumo{
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin: -12px 0 12px;
+  padding: 4px 18px;
+
+  border: 1px solid var(--line-on-paper);
+  border-radius: var(--radius-sm);
+
+  background: var(--paper-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.vaga-resumo-info{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.vaga-resumo-info b{
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.vaga-resumo-info span{
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.vaga-resumo .selo{
+  flex-shrink: 0; /* impede o selo de espremer quando o nome da vaga é grande */
 }
 
 /* ==========================================================
